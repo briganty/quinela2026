@@ -1,0 +1,22 @@
+services:
+  quiniela:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      # Auto-update de marcadores. Si dejas FOOTBALL_API_KEY vacío, la app usa
+      # los resultados del Excel/seed y el cron queda desactivado.
+      - FOOTBALL_API_KEY=${FOOTBALL_API_KEY:-}
+      - FOOTBALL_PROVIDER=${FOOTBALL_PROVIDER:-football-data}
+      - FOOTBALL_COMPETITION=${FOOTBALL_COMPETITION:-WC}
+      - POLL_CRON=${POLL_CRON:-*/10 * * * *}
+      # Token opcional para cargar/corregir resultados a mano (PUT /api/matches/:id/result)
+      - ADMIN_TOKEN=${ADMIN_TOKEN:-}
+      - DB_PATH=/data/quiniela.db
+    volumes:
+      # persiste la base SQLite fuera del contenedor
+      - quiniela-data:/data
+    restart: unless-stopped
+
+volumes:
+  quiniela-data:

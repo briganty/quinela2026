@@ -1,0 +1,144 @@
+:root {
+  --bg: #0f1424;
+  --panel: #1a2138;
+  --panel-2: #232c4a;
+  --line: #2e3858;
+  --text: #e8ecf6;
+  --muted: #8c97b8;
+  --accent: #36d399;
+  --accent-2: #fbbf24;
+  --miss: #3a2330;
+  --gold: #f5c542;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.header { text-align: center; padding: 12px 0; }
+.header h1 { margin: 0; font-size: 1.6rem; }
+.subtitle { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+.tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.tabs.pools { margin: 14px 0 6px; }
+.tabs.views { margin-bottom: 14px; }
+
+.tab {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+.tab:hover { border-color: var(--accent); }
+.tab.active { background: var(--accent); color: #06281c; border-color: var(--accent); font-weight: 600; }
+.pools .tab.active { background: var(--accent-2); color: #3a2c00; border-color: var(--accent-2); }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px;
+  overflow: hidden;
+}
+.card.scroll { overflow-x: auto; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.table th, .table td { padding: 9px 10px; text-align: center; }
+.table thead th {
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.table tbody tr { border-bottom: 1px solid #222a45; }
+.table tbody tr:last-child { border-bottom: none; }
+
+.standings .name { text-align: left; font-weight: 600; }
+.standings .pts { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.standings tr.leader { background: rgba(245, 197, 66, 0.08); }
+
+.muted { color: var(--muted); }
+
+/* prediction grid */
+.grid th, .grid td { white-space: nowrap; }
+.grid .sticky-col {
+  position: sticky;
+  left: 0;
+  background: var(--panel);
+  text-align: left;
+  z-index: 1;
+}
+.grid thead .sticky-col { z-index: 2; }
+.grid .match span { font-size: 0.86rem; }
+.grid .match em { color: var(--muted); font-style: normal; padding: 0 3px; }
+.grid .official { font-weight: 700; color: var(--accent-2); }
+.grid .cell { position: relative; }
+.grid .pred { font-variant-numeric: tabular-nums; }
+.grid .badge {
+  display: inline-block;
+  min-width: 16px;
+  margin-left: 6px;
+  padding: 0 5px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--panel-2);
+}
+.cell.exact { background: rgba(54, 211, 153, 0.16); }
+.cell.exact .badge { background: var(--accent); color: #06281c; }
+.cell.outcome { background: rgba(251, 191, 36, 0.12); }
+.cell.outcome .badge { background: var(--accent-2); color: #3a2c00; }
+.cell.miss .badge { background: #4a3040; color: #d9a0b5; }
+
+/* fixture */
+.fixture { display: flex; flex-direction: column; gap: 12px; }
+.day-title { margin: 4px 8px 10px; font-size: 1rem; text-transform: capitalize; color: var(--accent-2); }
+.match-row {
+  display: grid;
+  grid-template-columns: 52px 26px 1fr 84px 1fr 44px;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 8px;
+  border-top: 1px solid #222a45;
+  font-size: 0.9rem;
+}
+.match-row .time { color: var(--muted); font-size: 0.82rem; }
+.match-row .grp {
+  background: var(--panel-2);
+  border-radius: 5px;
+  font-size: 0.72rem;
+  padding: 1px 0;
+  text-align: center;
+  color: var(--muted);
+}
+.match-row .home { text-align: right; }
+.match-row .away { text-align: left; }
+.match-row .score { text-align: center; font-weight: 700; }
+.tag { font-size: 0.66rem; padding: 2px 6px; border-radius: 5px; font-weight: 700; }
+.tag.done { background: var(--panel-2); color: var(--muted); }
+.tag.live { background: #e0245e; color: #fff; }
+
+.footer { text-align: center; margin-top: 18px; font-size: 0.8rem; }
+
+@media (max-width: 600px) {
+  .match-row { grid-template-columns: 44px 1fr 70px 1fr; }
+  .match-row .grp { display: none; }
+  .match-row .tag { display: none; }
+}

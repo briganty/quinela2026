@@ -1,0 +1,21 @@
+{
+  "name": "quiniela-mundial-2026-server",
+  "version": "1.0.0",
+  "description": "Backend API para la quiniela del Mundial 2026",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "import": "node ../scripts/import-excel.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,4464 @@
+{
+  "teams": [
+    {
+      "name": "México",
+      "group_code": "A"
+    },
+    {
+      "name": "Sudáfrica",
+      "group_code": "A"
+    },
+    {
+      "name": "Corea del Sur",
+      "group_code": "A"
+    },
+    {
+      "name": "Chequia",
+      "group_code": "A"
+    },
+    {
+      "name": "Canadá",
+      "group_code": "B"
+    },
+    {
+      "name": "Bosnia y Herzegovina",
+      "group_code": "B"
+    },
+    {
+      "name": "Qatar",
+      "group_code": "B"
+    },
+    {
+      "name": "Suiza",
+      "group_code": "B"
+    },
+    {
+      "name": "Brasil",
+      "group_code": "C"
+    },
+    {
+      "name": "Marruecos",
+      "group_code": "C"
+    },
+    {
+      "name": "Haití",
+      "group_code": "C"
+    },
+    {
+      "name": "Escocia",
+      "group_code": "C"
+    },
+    {
+      "name": "Estados Unidos",
+      "group_code": "D"
+    },
+    {
+      "name": "Paraguay",
+      "group_code": "D"
+    },
+    {
+      "name": "Australia",
+      "group_code": "D"
+    },
+    {
+      "name": "Turquía",
+      "group_code": "D"
+    },
+    {
+      "name": "Alemania",
+      "group_code": "E"
+    },
+    {
+      "name": "Curazao",
+      "group_code": "E"
+    },
+    {
+      "name": "Costa de Marfil",
+      "group_code": "E"
+    },
+    {
+      "name": "Ecuador",
+      "group_code": "E"
+    },
+    {
+      "name": "Países Bajos",
+      "group_code": "F"
+    },
+    {
+      "name": "Japón",
+      "group_code": "F"
+    },
+    {
+      "name": "Suecia",
+      "group_code": "F"
+    },
+    {
+      "name": "Túnez",
+      "group_code": "F"
+    },
+    {
+      "name": "Bélgica",
+      "group_code": "G"
+    },
+    {
+      "name": "Egipto",
+      "group_code": "G"
+    },
+    {
+      "name": "Irán",
+      "group_code": "G"
+    },
+    {
+      "name": "Nueva Zelanda",
+      "group_code": "G"
+    },
+    {
+      "name": "España",
+      "group_code": "H"
+    },
+    {
+      "name": "Cabo Verde",
+      "group_code": "H"
+    },
+    {
+      "name": "Arabia Saudita",
+      "group_code": "H"
+    },
+    {
+      "name": "Uruguay",
+      "group_code": "H"
+    },
+    {
+      "name": "Francia",
+      "group_code": "I"
+    },
+    {
+      "name": "Senegal",
+      "group_code": "I"
+    },
+    {
+      "name": "Irak",
+      "group_code": "I"
+    },
+    {
+      "name": "Noruega",
+      "group_code": "I"
+    },
+    {
+      "name": "Argentina",
+      "group_code": "J"
+    },
+    {
+      "name": "Argelia",
+      "group_code": "J"
+    },
+    {
+      "name": "Austria",
+      "group_code": "J"
+    },
+    {
+      "name": "Jordania",
+      "group_code": "J"
+    },
+    {
+      "name": "Portugal",
+      "group_code": "K"
+    },
+    {
+      "name": "RD Congo",
+      "group_code": "K"
+    },
+    {
+      "name": "Uzbekistán",
+      "group_code": "K"
+    },
+    {
+      "name": "Colombia",
+      "group_code": "K"
+    },
+    {
+      "name": "Inglaterra",
+      "group_code": "L"
+    },
+    {
+      "name": "Croacia",
+      "group_code": "L"
+    },
+    {
+      "name": "Ghana",
+      "group_code": "L"
+    },
+    {
+      "name": "Panamá",
+      "group_code": "L"
+    }
+  ],
+  "matches": [
+    {
+      "match_no": 1,
+      "kickoff": "2026-06-11T13:00:00",
+      "stadium": "Estadio Ciudad de México (Ciudad de México)",
+      "group_code": "A",
+      "phase": "GROUP",
+      "home_team": "México",
+      "away_team": "Sudáfrica",
+      "official_home": 2,
+      "official_away": 0,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 2,
+      "kickoff": "2026-06-11T20:00:00",
+      "stadium": "Estadio Guadalajara (Guadalajara)",
+      "group_code": "A",
+      "phase": "GROUP",
+      "home_team": "Corea del Sur",
+      "away_team": "Chequia",
+      "official_home": 2,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 3,
+      "kickoff": "2026-06-12T13:00:00",
+      "stadium": "Estadio de Toronto (Toronto)",
+      "group_code": "B",
+      "phase": "GROUP",
+      "home_team": "Canadá",
+      "away_team": "Bosnia y Herzegovina",
+      "official_home": 1,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 4,
+      "kickoff": "2026-06-12T19:00:00",
+      "stadium": "Estadio Los Ángeles (Los Ángeles)",
+      "group_code": "D",
+      "phase": "GROUP",
+      "home_team": "Estados Unidos",
+      "away_team": "Paraguay",
+      "official_home": 4,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 5,
+      "kickoff": "2026-06-13T13:00:00",
+      "stadium": "Estadio de la Bahía de San Francisco",
+      "group_code": "B",
+      "phase": "GROUP",
+      "home_team": "Qatar",
+      "away_team": "Suiza",
+      "official_home": 1,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 6,
+      "kickoff": "2026-06-13T16:00:00",
+      "stadium": "Estadio Nueva York/Nueva Jersey",
+      "group_code": "C",
+      "phase": "GROUP",
+      "home_team": "Brasil",
+      "away_team": "Marruecos",
+      "official_home": 1,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 7,
+      "kickoff": "2026-06-13T19:00:00",
+      "stadium": "Estadio Boston (Boston)",
+      "group_code": "C",
+      "phase": "GROUP",
+      "home_team": "Haití",
+      "away_team": "Escocia",
+      "official_home": 0,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 8,
+      "kickoff": "2026-06-13T22:00:00",
+      "stadium": "Estadio BC Place Vancouver",
+      "group_code": "D",
+      "phase": "GROUP",
+      "home_team": "Australia",
+      "away_team": "Turquía",
+      "official_home": 2,
+      "official_away": 0,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 9,
+      "kickoff": "2026-06-14T11:00:00",
+      "stadium": "Estadio Houston (Houston)",
+      "group_code": "E",
+      "phase": "GROUP",
+      "home_team": "Alemania",
+      "away_team": "Curazao",
+      "official_home": 7,
+      "official_away": 1,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 10,
+      "kickoff": "2026-06-14T14:00:00",
+      "stadium": "Estadio Dallas (Dallas)",
+      "group_code": "F",
+      "phase": "GROUP",
+      "home_team": "Países Bajos",
+      "away_team": "Japón",
+      "official_home": 2,
+      "official_away": 2,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 11,
+      "kickoff": "2026-06-14T17:00:00",
+      "stadium": "Estadio Filadelfia (Filadelfia)",
+      "group_code": "E",
+      "phase": "GROUP",
+      "home_team": "Costa de Marfil",
+      "away_team": "Ecuador",
+      "official_home": 1,
+      "official_away": 0,
+      "status": "FINISHED"
+    },
+    {
+      "match_no": 12,
+      "kickoff": "2026-06-14T20:00:00",
+      "stadium": "Estadio Monterrey (Monterrey)",
+      "group_code": "F",
+      "phase": "GROUP",
+      "home_team": "Suecia",
+      "away_team": "Túnez",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 13,
+      "kickoff": "2026-06-15T10:00:00",
+      "stadium": "Estadio Atlanta (Atlanta)",
+      "group_code": "H",
+      "phase": "GROUP",
+      "home_team": "España",
+      "away_team": "Cabo Verde",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 14,
+      "kickoff": "2026-06-15T13:00:00",
+      "stadium": "Estadio Seattle (Seattle)",
+      "group_code": "G",
+      "phase": "GROUP",
+      "home_team": "Bélgica",
+      "away_team": "Egipto",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 15,
+      "kickoff": "2026-06-15T16:00:00",
+      "stadium": "Estadio Miami (Miami)",
+      "group_code": "H",
+      "phase": "GROUP",
+      "home_team": "Arabia Saudita",
+      "away_team": "Uruguay",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 16,
+      "kickoff": "2026-06-15T19:00:00",
+      "stadium": "Estadio Los Ángeles (Los Ángeles)",
+      "group_code": "G",
+      "phase": "GROUP",
+      "home_team": "Irán",
+      "away_team": "Nueva Zelanda",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 17,
+      "kickoff": "2026-06-16T13:00:00",
+      "stadium": "Estadio Nueva York/Nueva Jersey",
+      "group_code": "I",
+      "phase": "GROUP",
+      "home_team": "Francia",
+      "away_team": "Senegal",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 18,
+      "kickoff": "2026-06-16T16:00:00",
+      "stadium": "Estadio Boston (Boston)",
+      "group_code": "I",
+      "phase": "GROUP",
+      "home_team": "Irak",
+      "away_team": "Noruega",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 19,
+      "kickoff": "2026-06-16T19:00:00",
+      "stadium": "Estadio Kansas City",
+      "group_code": "J",
+      "phase": "GROUP",
+      "home_team": "Argentina",
+      "away_team": "Argelia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 20,
+      "kickoff": "2026-06-16T22:00:00",
+      "stadium": "Estadio Bahía de San Francisco",
+      "group_code": "J",
+      "phase": "GROUP",
+      "home_team": "Austria",
+      "away_team": "Jordania",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 21,
+      "kickoff": "2026-06-17T11:00:00",
+      "stadium": "Estadio Houston",
+      "group_code": "K",
+      "phase": "GROUP",
+      "home_team": "Portugal",
+      "away_team": "RD Congo",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 22,
+      "kickoff": "2026-06-17T14:00:00",
+      "stadium": "Estadio Dallas",
+      "group_code": "L",
+      "phase": "GROUP",
+      "home_team": "Inglaterra",
+      "away_team": "Croacia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 23,
+      "kickoff": "2026-06-17T17:00:00",
+      "stadium": "Estadio Toronto",
+      "group_code": "L",
+      "phase": "GROUP",
+      "home_team": "Ghana",
+      "away_team": "Panamá",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 24,
+      "kickoff": "2026-06-17T20:00:00",
+      "stadium": "Estadio Ciudad de México",
+      "group_code": "K",
+      "phase": "GROUP",
+      "home_team": "Uzbekistán",
+      "away_team": "Colombia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 25,
+      "kickoff": "2026-06-18T10:00:00",
+      "stadium": "Estadio Atlanta",
+      "group_code": "A",
+      "phase": "GROUP",
+      "home_team": "Chequia",
+      "away_team": "Sudáfrica",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 26,
+      "kickoff": "2026-06-18T13:00:00",
+      "stadium": "Estadio Los Ángeles",
+      "group_code": "B",
+      "phase": "GROUP",
+      "home_team": "Suiza",
+      "away_team": "Bosnia y Herzegovina",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 27,
+      "kickoff": "2026-06-18T16:00:00",
+      "stadium": "Estadio Vancouver",
+      "group_code": "B",
+      "phase": "GROUP",
+      "home_team": "Canadá",
+      "away_team": "Qatar",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 28,
+      "kickoff": "2026-06-18T19:00:00",
+      "stadium": "Estadio Guadalajara",
+      "group_code": "A",
+      "phase": "GROUP",
+      "home_team": "México",
+      "away_team": "Corea del Sur",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 29,
+      "kickoff": "2026-06-19T13:00:00",
+      "stadium": "Estadio Seattle",
+      "group_code": "D",
+      "phase": "GROUP",
+      "home_team": "Estados Unidos",
+      "away_team": "Australia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 30,
+      "kickoff": "2026-06-19T16:00:00",
+      "stadium": "Estadio Boston",
+      "group_code": "C",
+      "phase": "GROUP",
+      "home_team": "Escocia",
+      "away_team": "Marruecos",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 31,
+      "kickoff": "2026-06-19T18:30:00",
+      "stadium": "Estadio Filadelfia",
+      "group_code": "C",
+      "phase": "GROUP",
+      "home_team": "Brasil",
+      "away_team": "Haití",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 32,
+      "kickoff": "2026-06-19T21:00:00",
+      "stadium": "Estadio Bahía de San Francisco",
+      "group_code": "D",
+      "phase": "GROUP",
+      "home_team": "Turquía",
+      "away_team": "Paraguay",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 33,
+      "kickoff": "2026-06-20T11:00:00",
+      "stadium": "Estadio Houston",
+      "group_code": "F",
+      "phase": "GROUP",
+      "home_team": "Países Bajos",
+      "away_team": "Suecia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 34,
+      "kickoff": "2026-06-20T14:00:00",
+      "stadium": "Estadio Toronto",
+      "group_code": "E",
+      "phase": "GROUP",
+      "home_team": "Alemania",
+      "away_team": "Costa de Marfil",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 35,
+      "kickoff": "2026-06-20T18:00:00",
+      "stadium": "Estadio Kansas City",
+      "group_code": "E",
+      "phase": "GROUP",
+      "home_team": "Ecuador",
+      "away_team": "Curazao",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 36,
+      "kickoff": "2026-06-20T22:00:00",
+      "stadium": "Estadio Monterrey",
+      "group_code": "F",
+      "phase": "GROUP",
+      "home_team": "Túnez",
+      "away_team": "Japón",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 37,
+      "kickoff": "2026-06-21T10:00:00",
+      "stadium": "Estadio Atlanta",
+      "group_code": "H",
+      "phase": "GROUP",
+      "home_team": "España",
+      "away_team": "Arabia Saudita",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 38,
+      "kickoff": "2026-06-21T13:00:00",
+      "stadium": "Estadio Los Ángeles",
+      "group_code": "G",
+      "phase": "GROUP",
+      "home_team": "Bélgica",
+      "away_team": "Irán",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 39,
+      "kickoff": "2026-06-21T16:00:00",
+      "stadium": "Estadio Miami",
+      "group_code": "H",
+      "phase": "GROUP",
+      "home_team": "Uruguay",
+      "away_team": "Cabo Verde",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 40,
+      "kickoff": "2026-06-21T19:00:00",
+      "stadium": "Estadio Vancouver",
+      "group_code": "G",
+      "phase": "GROUP",
+      "home_team": "Nueva Zelanda",
+      "away_team": "Egipto",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 41,
+      "kickoff": "2026-06-22T11:00:00",
+      "stadium": "Estadio Dallas",
+      "group_code": "J",
+      "phase": "GROUP",
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 42,
+      "kickoff": "2026-06-22T15:00:00",
+      "stadium": "Estadio Filadelfia",
+      "group_code": "I",
+      "phase": "GROUP",
+      "home_team": "Francia",
+      "away_team": "Irak",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 43,
+      "kickoff": "2026-06-22T18:00:00",
+      "stadium": "Estadio Nueva York/Nueva Jersey",
+      "group_code": "I",
+      "phase": "GROUP",
+      "home_team": "Noruega",
+      "away_team": "Senegal",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 44,
+      "kickoff": "2026-06-22T21:00:00",
+      "stadium": "Estadio Bahía de San Francisco",
+      "group_code": "J",
+      "phase": "GROUP",
+      "home_team": "Jordania",
+      "away_team": "Argelia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 45,
+      "kickoff": "2026-06-23T11:00:00",
+      "stadium": "Estadio Houston",
+      "group_code": "K",
+      "phase": "GROUP",
+      "home_team": "Portugal",
+      "away_team": "Uzbekistán",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 46,
+      "kickoff": "2026-06-23T14:00:00",
+      "stadium": "Estadio Boston",
+      "group_code": "L",
+      "phase": "GROUP",
+      "home_team": "Inglaterra",
+      "away_team": "Ghana",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 47,
+      "kickoff": "2026-06-23T17:00:00",
+      "stadium": "Estadio Toronto",
+      "group_code": "L",
+      "phase": "GROUP",
+      "home_team": "Panamá",
+      "away_team": "Croacia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 48,
+      "kickoff": "2026-06-23T20:00:00",
+      "stadium": "Estadio Guadalajara",
+      "group_code": "K",
+      "phase": "GROUP",
+      "home_team": "Colombia",
+      "away_team": "RD Congo",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 49,
+      "kickoff": "2026-06-24T13:00:00",
+      "stadium": "Estadio Vancouver",
+      "group_code": "B",
+      "phase": "GROUP",
+      "home_team": "Suiza",
+      "away_team": "Canadá",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 50,
+      "kickoff": "2026-06-24T13:00:00",
+      "stadium": "Estadio Seattle",
+      "group_code": "B",
+      "phase": "GROUP",
+      "home_team": "Bosnia y Herzegovina",
+      "away_team": "Qatar",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 51,
+      "kickoff": "2026-06-24T18:00:00",
+      "stadium": "Estadio Miami",
+      "group_code": "C",
+      "phase": "GROUP",
+      "home_team": "Escocia",
+      "away_team": "Brasil",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 52,
+      "kickoff": "2026-06-24T16:00:00",
+      "stadium": "Estadio Atlanta",
+      "group_code": "C",
+      "phase": "GROUP",
+      "home_team": "Marruecos",
+      "away_team": "Haití",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 53,
+      "kickoff": "2026-06-24T19:00:00",
+      "stadium": "Estadio Ciudad de México",
+      "group_code": "A",
+      "phase": "GROUP",
+      "home_team": "Chequia",
+      "away_team": "México",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 54,
+      "kickoff": "2026-06-24T19:00:00",
+      "stadium": "Estadio Monterrey",
+      "group_code": "A",
+      "phase": "GROUP",
+      "home_team": "Sudáfrica",
+      "away_team": "Corea del Sur",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 55,
+      "kickoff": "2026-06-25T14:00:00",
+      "stadium": "Estadio Filadelfia",
+      "group_code": "E",
+      "phase": "GROUP",
+      "home_team": "Curazao",
+      "away_team": "Costa de Marfil",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 56,
+      "kickoff": "2026-06-25T14:00:00",
+      "stadium": "Estadio Nueva York/Nueva Jersey",
+      "group_code": "E",
+      "phase": "GROUP",
+      "home_team": "Ecuador",
+      "away_team": "Alemania",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 57,
+      "kickoff": "2026-06-25T17:00:00",
+      "stadium": "Estadio Dallas",
+      "group_code": "F",
+      "phase": "GROUP",
+      "home_team": "Japón",
+      "away_team": "Suecia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 58,
+      "kickoff": "2026-06-25T17:00:00",
+      "stadium": "Estadio Kansas City",
+      "group_code": "F",
+      "phase": "GROUP",
+      "home_team": "Túnez",
+      "away_team": "Países Bajos",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 59,
+      "kickoff": "2026-06-25T20:00:00",
+      "stadium": "Estadio Los Ángeles",
+      "group_code": "D",
+      "phase": "GROUP",
+      "home_team": "Turquía",
+      "away_team": "Estados Unidos",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 60,
+      "kickoff": "2026-06-25T20:00:00",
+      "stadium": "Estadio Bahía de San Francisco",
+      "group_code": "D",
+      "phase": "GROUP",
+      "home_team": "Paraguay",
+      "away_team": "Australia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 61,
+      "kickoff": "2026-06-26T13:00:00",
+      "stadium": "Estadio Boston",
+      "group_code": "I",
+      "phase": "GROUP",
+      "home_team": "Noruega",
+      "away_team": "Francia",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 62,
+      "kickoff": "2026-06-26T13:00:00",
+      "stadium": "Estadio Toronto",
+      "group_code": "I",
+      "phase": "GROUP",
+      "home_team": "Senegal",
+      "away_team": "Irak",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 63,
+      "kickoff": "2026-06-26T18:00:00",
+      "stadium": "Estadio Houston",
+      "group_code": "H",
+      "phase": "GROUP",
+      "home_team": "Cabo Verde",
+      "away_team": "Arabia Saudita",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 64,
+      "kickoff": "2026-06-26T18:00:00",
+      "stadium": "Estadio Guadalajara",
+      "group_code": "H",
+      "phase": "GROUP",
+      "home_team": "Uruguay",
+      "away_team": "España",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 65,
+      "kickoff": "2026-06-26T21:00:00",
+      "stadium": "Estadio Seattle",
+      "group_code": "G",
+      "phase": "GROUP",
+      "home_team": "Egipto",
+      "away_team": "Irán",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 66,
+      "kickoff": "2026-06-26T21:00:00",
+      "stadium": "Estadio Vancouver",
+      "group_code": "G",
+      "phase": "GROUP",
+      "home_team": "Nueva Zelanda",
+      "away_team": "Bélgica",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 67,
+      "kickoff": "2026-06-27T15:00:00",
+      "stadium": "Estadio Nueva York/Nueva Jersey",
+      "group_code": "L",
+      "phase": "GROUP",
+      "home_team": "Panamá",
+      "away_team": "Inglaterra",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 68,
+      "kickoff": "2026-06-27T15:00:00",
+      "stadium": "Estadio Filadelfia",
+      "group_code": "L",
+      "phase": "GROUP",
+      "home_team": "Croacia",
+      "away_team": "Ghana",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 69,
+      "kickoff": "2026-06-27T17:30:00",
+      "stadium": "Estadio Miami",
+      "group_code": "K",
+      "phase": "GROUP",
+      "home_team": "Colombia",
+      "away_team": "Portugal",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 70,
+      "kickoff": "2026-06-27T17:30:00",
+      "stadium": "Estadio Atlanta",
+      "group_code": "K",
+      "phase": "GROUP",
+      "home_team": "RD Congo",
+      "away_team": "Uzbekistán",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 71,
+      "kickoff": "2026-06-27T20:00:00",
+      "stadium": "Estadio Kansas City",
+      "group_code": "J",
+      "phase": "GROUP",
+      "home_team": "Argelia",
+      "away_team": "Austria",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 72,
+      "kickoff": "2026-06-27T20:00:00",
+      "stadium": "Estadio Dallas",
+      "group_code": "J",
+      "phase": "GROUP",
+      "home_team": "Jordania",
+      "away_team": "Argentina",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    }
+  ],
+  "pools": [
+    {
+      "name": "CASA"
+    },
+    {
+      "name": "ABU"
+    }
+  ],
+  "players": [
+    {
+      "pool": "CASA",
+      "name": "Sammy",
+      "order": 0
+    },
+    {
+      "pool": "CASA",
+      "name": "Tasha",
+      "order": 1
+    },
+    {
+      "pool": "CASA",
+      "name": "Tony",
+      "order": 2
+    },
+    {
+      "pool": "CASA",
+      "name": "Eduardo",
+      "order": 3
+    },
+    {
+      "pool": "ABU",
+      "name": "Sammy",
+      "order": 0
+    },
+    {
+      "pool": "ABU",
+      "name": "Tasha",
+      "order": 1
+    },
+    {
+      "pool": "ABU",
+      "name": "Tony",
+      "order": 2
+    },
+    {
+      "pool": "ABU",
+      "name": "Nury",
+      "order": 3
+    },
+    {
+      "pool": "ABU",
+      "name": "Abu",
+      "order": 4
+    },
+    {
+      "pool": "ABU",
+      "name": "Jared",
+      "order": 5
+    }
+  ],
+  "pool_matches": [
+    {
+      "pool": "CASA",
+      "position": 1,
+      "home_team": "México",
+      "away_team": "Sudáfrica",
+      "match_no": 1,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 2,
+      "home_team": "Corea del Sur",
+      "away_team": "Chequia",
+      "match_no": 2,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 3,
+      "home_team": "Canadá",
+      "away_team": "Bosnia y Herzegovina",
+      "match_no": 3,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 4,
+      "home_team": "Estados Unidos",
+      "away_team": "Paraguay",
+      "match_no": 4,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 5,
+      "home_team": "Qatar",
+      "away_team": "Suiza",
+      "match_no": 5,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 6,
+      "home_team": "Brasil",
+      "away_team": "Marruecos",
+      "match_no": 6,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 7,
+      "home_team": "Haití",
+      "away_team": "Escocia",
+      "match_no": 7,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 8,
+      "home_team": "Australia",
+      "away_team": "Turquía",
+      "match_no": 8,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 9,
+      "home_team": "Alemania",
+      "away_team": "Curazao",
+      "match_no": 9,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 10,
+      "home_team": "Países Bajos",
+      "away_team": "Japón",
+      "match_no": 10,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 11,
+      "home_team": "Costa de Marfil",
+      "away_team": "Ecuador",
+      "match_no": 11,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 12,
+      "home_team": "Suecia",
+      "away_team": "Túnez",
+      "match_no": 12,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 13,
+      "home_team": "España",
+      "away_team": "Cabo Verde",
+      "match_no": 13,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 14,
+      "home_team": "Bélgica",
+      "away_team": "Egipto",
+      "match_no": 14,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 15,
+      "home_team": "Arabia Saudita",
+      "away_team": "Uruguay",
+      "match_no": 15,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 16,
+      "home_team": "Irán",
+      "away_team": "Nueva Zelanda",
+      "match_no": 16,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 17,
+      "home_team": "Francia",
+      "away_team": "Senegal",
+      "match_no": 17,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 18,
+      "home_team": "Irak",
+      "away_team": "Noruega",
+      "match_no": 18,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 19,
+      "home_team": "Argentina",
+      "away_team": "Argelia",
+      "match_no": 19,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 20,
+      "home_team": "Austria",
+      "away_team": "Jordania",
+      "match_no": 20,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 21,
+      "home_team": "Portugal",
+      "away_team": "RD Congo",
+      "match_no": 21,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 22,
+      "home_team": "Inglaterra",
+      "away_team": "Croacia",
+      "match_no": 22,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 23,
+      "home_team": "Ghana",
+      "away_team": "Panamá",
+      "match_no": 23,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 24,
+      "home_team": "Uzbekistán",
+      "away_team": "Colombia",
+      "match_no": 24,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 25,
+      "home_team": "Chequia",
+      "away_team": "Sudáfrica",
+      "match_no": 25,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 26,
+      "home_team": "Suiza",
+      "away_team": "Bosnia y Herzegovina",
+      "match_no": 26,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 27,
+      "home_team": "Canadá",
+      "away_team": "Qatar",
+      "match_no": 27,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 28,
+      "home_team": "México",
+      "away_team": "Corea del Sur",
+      "match_no": 28,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 29,
+      "home_team": "Estados Unidos",
+      "away_team": "Australia",
+      "match_no": 29,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 30,
+      "home_team": "Escocia",
+      "away_team": "Marruecos",
+      "match_no": 30,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 31,
+      "home_team": "Brasil",
+      "away_team": "Haití",
+      "match_no": 31,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 32,
+      "home_team": "Turquía",
+      "away_team": "Paraguay",
+      "match_no": 32,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 33,
+      "home_team": "Países Bajos",
+      "away_team": "Suecia",
+      "match_no": 33,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 34,
+      "home_team": "Alemania",
+      "away_team": "Costa de Marfil",
+      "match_no": 34,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 35,
+      "home_team": "Ecuador",
+      "away_team": "Curazao",
+      "match_no": 35,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 36,
+      "home_team": "Túnez",
+      "away_team": "Japón",
+      "match_no": 36,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 37,
+      "home_team": "España",
+      "away_team": "Arabia Saudita",
+      "match_no": 37,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 38,
+      "home_team": "Bélgica",
+      "away_team": "Irán",
+      "match_no": 38,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 39,
+      "home_team": "Uruguay",
+      "away_team": "Cabo Verde",
+      "match_no": 39,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 40,
+      "home_team": "Nueva Zelanda",
+      "away_team": "Egipto",
+      "match_no": 40,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 41,
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "match_no": 41,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 42,
+      "home_team": "Francia",
+      "away_team": "Irak",
+      "match_no": 42,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 43,
+      "home_team": "Noruega",
+      "away_team": "Senegal",
+      "match_no": 43,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 44,
+      "home_team": "Jordania",
+      "away_team": "Argelia",
+      "match_no": 44,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 45,
+      "home_team": "Portugal",
+      "away_team": "Uzbekistán",
+      "match_no": 45,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 46,
+      "home_team": "Inglaterra",
+      "away_team": "Ghana",
+      "match_no": 46,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 47,
+      "home_team": "Panamá",
+      "away_team": "Croacia",
+      "match_no": 47,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 48,
+      "home_team": "Colombia",
+      "away_team": "RD Congo",
+      "match_no": 48,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 49,
+      "home_team": "Suiza",
+      "away_team": "Canadá",
+      "match_no": 49,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 50,
+      "home_team": "Bosnia y Herzegovina",
+      "away_team": "Qatar",
+      "match_no": 50,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 51,
+      "home_team": "Escocia",
+      "away_team": "Brasil",
+      "match_no": 51,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 52,
+      "home_team": "Marruecos",
+      "away_team": "Haití",
+      "match_no": 52,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 53,
+      "home_team": "Chequia",
+      "away_team": "México",
+      "match_no": 53,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 54,
+      "home_team": "Sudáfrica",
+      "away_team": "Corea del Sur",
+      "match_no": 54,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 55,
+      "home_team": "Curazao",
+      "away_team": "Costa de Marfil",
+      "match_no": 55,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 56,
+      "home_team": "Ecuador",
+      "away_team": "Alemania",
+      "match_no": 56,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 57,
+      "home_team": "Japón",
+      "away_team": "Suecia",
+      "match_no": 57,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 58,
+      "home_team": "Túnez",
+      "away_team": "Países Bajos",
+      "match_no": 58,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 59,
+      "home_team": "Turquía",
+      "away_team": "Estados Unidos",
+      "match_no": 59,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 60,
+      "home_team": "Paraguay",
+      "away_team": "Australia",
+      "match_no": 60,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 61,
+      "home_team": "Noruega",
+      "away_team": "Francia",
+      "match_no": 61,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 62,
+      "home_team": "Senegal",
+      "away_team": "Irak",
+      "match_no": 62,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 63,
+      "home_team": "Cabo Verde",
+      "away_team": "Arabia Saudita",
+      "match_no": 63,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 64,
+      "home_team": "Uruguay",
+      "away_team": "España",
+      "match_no": 64,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 65,
+      "home_team": "Egipto",
+      "away_team": "Irán",
+      "match_no": 65,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 66,
+      "home_team": "Nueva Zelanda",
+      "away_team": "Bélgica",
+      "match_no": 66,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 67,
+      "home_team": "Panamá",
+      "away_team": "Inglaterra",
+      "match_no": 67,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 68,
+      "home_team": "Croacia",
+      "away_team": "Ghana",
+      "match_no": 68,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 69,
+      "home_team": "Colombia",
+      "away_team": "Portugal",
+      "match_no": 69,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 70,
+      "home_team": "RD Congo",
+      "away_team": "Uzbekistán",
+      "match_no": 70,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 71,
+      "home_team": "Argelia",
+      "away_team": "Austria",
+      "match_no": 71,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 72,
+      "home_team": "Jordania",
+      "away_team": "Argentina",
+      "match_no": 72,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "home_team": "México",
+      "away_team": "Sudáfrica",
+      "match_no": 1,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "home_team": "Estados Unidos",
+      "away_team": "Paraguay",
+      "match_no": 4,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "home_team": "Brasil",
+      "away_team": "Marruecos",
+      "match_no": 6,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "home_team": "Canadá",
+      "away_team": "Bosnia y Herzegovina",
+      "match_no": 3,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "home_team": "Países Bajos",
+      "away_team": "Japón",
+      "match_no": 10,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "home_team": "Panamá",
+      "away_team": "Croacia",
+      "match_no": 47,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "home_team": "Inglaterra",
+      "away_team": "Croacia",
+      "match_no": 22,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "home_team": "Marruecos",
+      "away_team": "Haití",
+      "match_no": 52,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "home_team": "México",
+      "away_team": "Corea del Sur",
+      "match_no": 28,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "home_team": "Estados Unidos",
+      "away_team": "Australia",
+      "match_no": 29,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "home_team": "Brasil",
+      "away_team": "Haití",
+      "match_no": 31,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "home_team": "Alemania",
+      "away_team": "Costa de Marfil",
+      "match_no": 34,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "home_team": "Noruega",
+      "away_team": "Francia",
+      "match_no": 61,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "home_team": "España",
+      "away_team": "Arabia Saudita",
+      "match_no": 37,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "home_team": "Bélgica",
+      "away_team": "Irán",
+      "match_no": 38,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "match_no": 41,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "home_team": "Francia",
+      "away_team": "Senegal",
+      "match_no": 17,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "home_team": "Inglaterra",
+      "away_team": "Panamá",
+      "match_no": 67,
+      "reversed": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "home_team": "Colombia",
+      "away_team": "Portugal",
+      "match_no": 69,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "home_team": "Escocia",
+      "away_team": "Brasil",
+      "match_no": 51,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "home_team": "Chequia",
+      "away_team": "México",
+      "match_no": 53,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "home_team": "Ecuador",
+      "away_team": "Alemania",
+      "match_no": 56,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "home_team": "Turquía",
+      "away_team": "Estados Unidos",
+      "match_no": 59,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "home_team": "Uruguay",
+      "away_team": "España",
+      "match_no": 64,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "home_team": "Panamá",
+      "away_team": "Inglaterra",
+      "match_no": 67,
+      "reversed": 0
+    }
+  ],
+  "predictions": [
+    {
+      "pool": "CASA",
+      "position": 1,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 1,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 1,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 2,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 2,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 2,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 3,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 3,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 3,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 4,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 4,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 4,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 5,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 5,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 5,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 6,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 6,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 6,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 7,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 7,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 7,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 8,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 8,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 8,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 9,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 9,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 9,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 10,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 10,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 10,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 11,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 11,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 11,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 12,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 12,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 12,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 13,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 13,
+      "player": "Tasha",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 13,
+      "player": "Tony",
+      "pred_home": 5,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 14,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 14,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 14,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 15,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 15,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 15,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 16,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 16,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 16,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 17,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 17,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 17,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 18,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 18,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 18,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 19,
+      "player": "Sammy",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 19,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 19,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 20,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 20,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 20,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 21,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 21,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 21,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 22,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 22,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 22,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 23,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 23,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 23,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 24,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 24,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 24,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 25,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 25,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 25,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 26,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 26,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 26,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 27,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 27,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 27,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 28,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 28,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 28,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 29,
+      "player": "Sammy",
+      "pred_home": 4,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 29,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 29,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 30,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 30,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 30,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 31,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 31,
+      "player": "Tasha",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 31,
+      "player": "Tony",
+      "pred_home": 5,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 32,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 32,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 32,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 33,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 33,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 33,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 34,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 34,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 34,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 35,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 35,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 35,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 36,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 36,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 36,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 37,
+      "player": "Sammy",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 37,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 37,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 38,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 38,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 38,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 39,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 39,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 39,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 40,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 40,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 40,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 41,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 41,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 41,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 42,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 42,
+      "player": "Tasha",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 42,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 43,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 43,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 43,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 44,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 44,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 44,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 45,
+      "player": "Sammy",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 45,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 45,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 46,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 46,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 46,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 47,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 47,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 47,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 48,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 48,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 48,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 49,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 49,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 49,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 50,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 50,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 50,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 51,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 51,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 51,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 52,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 52,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 52,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 53,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 53,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 53,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 54,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 54,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 54,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 55,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 55,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 55,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 56,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 56,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 56,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 57,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 57,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 57,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 58,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 58,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 58,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 59,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 59,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 59,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 60,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 60,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 60,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 61,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 61,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 61,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 62,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 62,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 62,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 63,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 63,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 63,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 64,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 4
+    },
+    {
+      "pool": "CASA",
+      "position": 64,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 64,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 65,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 65,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 65,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 66,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 66,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 66,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 67,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 67,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 67,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 68,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 68,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 68,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 69,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 69,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 69,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 70,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 70,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 70,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 71,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 71,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 71,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 72,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "CASA",
+      "position": 72,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 72,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 4
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 1,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 2,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "player": "Sammy",
+      "pred_home": 4,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "player": "Abu",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 3,
+      "player": "Jared",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "player": "Abu",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 4,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 5,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "player": "Abu",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 6,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 7,
+      "player": "Jared",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "player": "Tony",
+      "pred_home": 5,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 8,
+      "player": "Jared",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "player": "Abu",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 9,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "player": "Abu",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 10,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "player": "Tasha",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "player": "Tony",
+      "pred_home": 6,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "player": "Abu",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 11,
+      "player": "Jared",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "player": "Tasha",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 12,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 13,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "player": "Tasha",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "player": "Tony",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 14,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "player": "Abu",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 15,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "player": "Sammy",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "player": "Abu",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 16,
+      "player": "Jared",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 17,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 18,
+      "player": "Jared",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "player": "Sammy",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "player": "Tony",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 19,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 20,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 21,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "player": "Nury",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "player": "Abu",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 22,
+      "player": "Jared",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "player": "Sammy",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "player": "Tasha",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "player": "Tony",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "player": "Nury",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 23,
+      "player": "Jared",
+      "pred_home": 1,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "player": "Sammy",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "player": "Tasha",
+      "pred_home": 2,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "player": "Tony",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 24,
+      "player": "Jared",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "player": "Sammy",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "player": "Tasha",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "player": "Tony",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "player": "Nury",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "player": "Abu",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "ABU",
+      "position": 25,
+      "player": "Jared",
+      "pred_home": 0,
+      "pred_away": 2
+    }
+  ]
+}

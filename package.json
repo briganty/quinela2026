@@ -1,0 +1,13 @@
+{
+  "name": "quiniela-mundial-2026",
+  "version": "1.0.0",
+  "description": "Quiniela del Mundial de Fútbol 2026 — tooling de importación",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "import": "node scripts/import-excel.js"
+  },
+  "devDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
