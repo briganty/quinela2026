@@ -42,15 +42,12 @@ if (existsSync(webDist)) {
 
 app.listen(PORT, () => console.log(`Quiniela server listening on :${PORT}`));
 
-// Schedule automatic result updates (only active when FOOTBALL_API_KEY is set).
-if (process.env.FOOTBALL_API_KEY) {
-  const schedule = process.env.POLL_CRON || "*/10 * * * *";
-  cron.schedule(schedule, async () => {
-    const r = await refreshResults();
-    console.log("[cron] refreshResults:", JSON.stringify(r));
-  });
-  console.log(`Auto-update scheduled (${schedule})`);
-  refreshResults().then((r) => console.log("[startup] refreshResults:", JSON.stringify(r)));
-} else {
-  console.log("FOOTBALL_API_KEY not set — auto-update disabled (using seed/manual results)");
-}
+// Auto-update is always scheduled. refreshResults() short-circuits when no API
+// key is configured (env or admin UI setting), so this is safe.
+const schedule = process.env.POLL_CRON || "*/10 * * * *";
+cron.schedule(schedule, async () => {
+  const r = await refreshResults();
+  console.log("[cron] refreshResults:", JSON.stringify(r));
+});
+console.log(`Auto-update scheduled (${schedule})`);
+refreshResults().then((r) => console.log("[startup] refreshResults:", JSON.stringify(r)));

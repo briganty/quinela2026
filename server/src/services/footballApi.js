@@ -1,4 +1,4 @@
-import { db } from "../db.js";
+import { db, getSetting } from "../db.js";
 
 // Map our Spanish team names to normalized aliases used by football data
 // providers (football-data.org / API-Football use English names).
@@ -221,9 +221,12 @@ function applyKnockouts(fixtures) {
 // Pull latest results from the configured provider and update matches.
 // Returns a summary; safely no-ops when no API key is configured.
 export async function refreshResults() {
-  const apiKey = process.env.FOOTBALL_API_KEY;
+  const apiKey = getSetting("football_api_key", process.env.FOOTBALL_API_KEY);
   if (!apiKey) return { skipped: "no FOOTBALL_API_KEY" };
-  const providerName = process.env.FOOTBALL_PROVIDER || "football-data";
+  const providerName = getSetting(
+    "football_provider",
+    process.env.FOOTBALL_PROVIDER || "football-data"
+  );
   const provider = PROVIDERS[providerName];
   if (!provider) return { error: `unknown provider ${providerName}` };
 

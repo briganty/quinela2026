@@ -6,6 +6,7 @@ import Fixture from "./pages/Fixture.jsx";
 import AdminLogin from "./AdminLogin.jsx";
 import Announcements from "./Announcements.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
+import Settings from "./Settings.jsx";
 
 const VIEWS = [
   { id: "standings", label: "Posiciones", icon: "🏆" },
@@ -52,6 +53,7 @@ export default function App() {
       <header className="header">
         <div className="admin-bar">
           <ThemeToggle />
+          <Settings adminToken={adminToken} />
           <AdminLogin token={adminToken} onChange={handleAdminChange} />
         </div>
         <img className="logo" src="/logo.png" alt="Quiniela Rojas Briganty" />

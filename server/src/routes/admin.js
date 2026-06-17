@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { db } from "../db.js";
+import { db, getSetting, setSetting } from "../db.js";
+import { refreshResults } from "../services/footballApi.js";
 
 const router = Router();
 
@@ -60,6 +61,43 @@ router.post("/announcements", requireAdmin, (req, res) => {
     .prepare("INSERT INTO announcements (message, created_at) VALUES (?, ?)")
     .run(message, new Date().toISOString());
   res.json({ id: info.lastInsertRowid, message, created_at: new Date().toISOString() });
+});
+
+// Read live settings. Sensitive values are masked.
+router.get("/settings", requireAdmin, (req, res) => {
+  const key = getSetting("football_api_key", process.env.FOOTBALL_API_KEY) || "";
+  const masked = key
+    ? key.slice(0, 4) + "•".repeat(Math.max(0, key.length - 8)) + key.slice(-4)
+    : "";
+  const provider = getSetting(
+    "football_provider",
+    process.env.FOOTBALL_PROVIDER || "football-data"
+  );
+  res.json({
+    football_api_key_masked: masked,
+    football_api_key_set: !!key,
+    football_provider: provider,
+  });
+});
+
+// Update settings. Body may contain football_api_key and/or football_provider.
+router.put("/settings", requireAdmin, (req, res) => {
+  const { football_api_key, football_provider } = req.body || {};
+  if (football_api_key !== undefined) {
+    setSetting("football_api_key", String(football_api_key));
+  }
+  if (football_provider !== undefined) {
+    const p = String(football_provider);
+    if (!["football-data", "api-sports"].includes(p))
+      return res.status(400).json({ error: "unknown provider" });
+    setSetting("football_provider", p);
+  }
+  res.json({ ok: true });
+});
+
+// Trigger a refresh and return the provider's result (handy from the UI).
+router.post("/refresh", requireAdmin, async (req, res) => {
+  res.json(await refreshResults());
 });
 
 // Delete an announcement.

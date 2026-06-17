@@ -311,6 +311,69 @@ body {
   box-shadow: var(--shadow-sm);
 }
 .theme-toggle:hover { border-color: var(--accent); }
+
+.settings-pill {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.settings-pill:hover { border-color: var(--accent); }
+
+.settings-modal { max-width: 420px; }
+.settings-label { display: flex; flex-direction: column; gap: 4px; }
+.settings-label > span { font-size: 0.78rem; color: var(--muted); }
+.settings-label select,
+.settings-label input {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+}
+.settings-label select:focus,
+.settings-label input:focus { border-color: var(--accent); }
+.settings-current {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0 2px;
+}
+.settings-current code {
+  background: var(--panel-2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+.link-btn {
+  background: transparent;
+  border: none;
+  color: var(--brand-red);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.link-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.settings-status {
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  margin: 0;
+}
 .admin-pill {
   background: var(--panel);
   color: var(--text);

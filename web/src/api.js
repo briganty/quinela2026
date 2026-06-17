@@ -42,3 +42,30 @@ export async function deleteAnnouncement(token, id) {
   if (!r.ok) throw new Error((await r.json()).error || "delete failed");
   return r.json();
 }
+
+export async function getSettings(token) {
+  const r = await fetch("/api/admin/settings", {
+    headers: { "x-admin-token": token },
+  });
+  if (!r.ok) throw new Error((await r.json()).error || "fetch failed");
+  return r.json();
+}
+
+export async function saveSettings(token, body) {
+  const r = await fetch("/api/admin/settings", {
+    method: "PUT",
+    headers: { "content-type": "application/json", "x-admin-token": token },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error((await r.json()).error || "save failed");
+  return r.json();
+}
+
+export async function adminRefresh(token) {
+  const r = await fetch("/api/admin/refresh", {
+    method: "POST",
+    headers: { "x-admin-token": token },
+  });
+  if (!r.ok) throw new Error((await r.json()).error || "refresh failed");
+  return r.json();
+}
