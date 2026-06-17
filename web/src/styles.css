@@ -327,35 +327,69 @@ body {
 }
 .settings-pill:hover { border-color: var(--accent); }
 
-.settings-modal { max-width: 420px; }
-.settings-label { display: flex; flex-direction: column; gap: 4px; }
-.settings-label > span { font-size: 0.78rem; color: var(--muted); }
+.settings-modal { max-width: 440px; gap: 14px; }
+.settings-modal h3 { margin: 0 0 2px; }
+
+.settings-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.settings-label > span {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
 .settings-label select,
 .settings-label input {
+  width: 100%;
   background: var(--bg);
   color: var(--text);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 9px 12px;
+  padding: 10px 12px;
   font-size: 0.95rem;
   font-family: inherit;
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.settings-label select {
+  /* explicit caret so it shows on every theme/browser */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path fill='%238c97b8' d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  padding-right: 32px;
 }
 .settings-label select:focus,
 .settings-label input:focus { border-color: var(--accent); }
+
 .settings-current {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
-  padding: 6px 0 2px;
+  flex-wrap: wrap;
+  min-height: 30px;
+  padding: 2px 0;
 }
 .settings-current code {
   background: var(--panel-2);
-  padding: 4px 8px;
+  color: var(--text);
+  padding: 6px 10px;
   border-radius: 6px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   letter-spacing: 0.02em;
+  word-break: break-all;
+  flex: 1 1 auto;
+  min-width: 0;
 }
+
 .link-btn {
   background: transparent;
   border: none;
@@ -363,16 +397,20 @@ body {
   font-family: inherit;
   font-size: 0.8rem;
   cursor: pointer;
-  padding: 0;
+  padding: 4px 6px;
   text-decoration: underline;
 }
+.link-btn:hover { background: rgba(214, 37, 59, 0.08); border-radius: 6px; }
 .link-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
 .settings-status {
   background: var(--panel-2);
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 8px 10px;
   font-size: 0.85rem;
   margin: 0;
+  word-break: break-word;
 }
 .admin-pill {
   background: var(--panel);
