@@ -59,6 +59,11 @@ function migrate() {
       pred_away INTEGER,
       PRIMARY KEY (pool_match_id, player_id)
     );
+    CREATE TABLE IF NOT EXISTS announcements (
+      id INTEGER PRIMARY KEY,
+      message TEXT NOT NULL,
+      created_at TEXT NOT NULL
+    );
   `);
 }
 

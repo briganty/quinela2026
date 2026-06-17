@@ -1057,6 +1057,390 @@
       "official_home": null,
       "official_away": null,
       "status": "SCHEDULED"
+    },
+    {
+      "match_no": 73,
+      "kickoff": "2026-06-28T19:00:00",
+      "stadium": "Los Ángeles",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "2° A",
+      "away_team": "2° B",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 74,
+      "kickoff": "2026-06-29T19:00:00",
+      "stadium": "Boston",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° E",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 75,
+      "kickoff": "2026-06-29T19:00:00",
+      "stadium": "Monterrey",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° F",
+      "away_team": "2° C",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 76,
+      "kickoff": "2026-06-29T19:00:00",
+      "stadium": "Houston",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° C",
+      "away_team": "2° F",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 77,
+      "kickoff": "2026-06-30T19:00:00",
+      "stadium": "Nueva York/NJ",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° I",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 78,
+      "kickoff": "2026-06-30T19:00:00",
+      "stadium": "Dallas",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "2° E",
+      "away_team": "2° I",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 79,
+      "kickoff": "2026-06-30T19:00:00",
+      "stadium": "Ciudad de México",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° A",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 80,
+      "kickoff": "2026-07-01T19:00:00",
+      "stadium": "Atlanta",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° L",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 81,
+      "kickoff": "2026-07-01T19:00:00",
+      "stadium": "San Francisco Bay",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° D",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 82,
+      "kickoff": "2026-07-01T19:00:00",
+      "stadium": "Seattle",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° G",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 83,
+      "kickoff": "2026-07-02T19:00:00",
+      "stadium": "Toronto",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "2° K",
+      "away_team": "2° L",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 84,
+      "kickoff": "2026-07-02T19:00:00",
+      "stadium": "Los Ángeles",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° H",
+      "away_team": "2° J",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 85,
+      "kickoff": "2026-07-02T19:00:00",
+      "stadium": "Vancouver",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° B",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 86,
+      "kickoff": "2026-07-03T19:00:00",
+      "stadium": "Miami",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° J",
+      "away_team": "2° H",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 87,
+      "kickoff": "2026-07-03T19:00:00",
+      "stadium": "Kansas City",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "1° K",
+      "away_team": "Mejor 3°",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 88,
+      "kickoff": "2026-07-03T19:00:00",
+      "stadium": "Dallas",
+      "group_code": null,
+      "phase": "R32",
+      "home_team": "2° D",
+      "away_team": "2° G",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 89,
+      "kickoff": "2026-07-04T19:00:00",
+      "stadium": "Filadelfia",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 73",
+      "away_team": "Ganador 74",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 90,
+      "kickoff": "2026-07-04T19:00:00",
+      "stadium": "Boston",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 75",
+      "away_team": "Ganador 76",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 91,
+      "kickoff": "2026-07-05T19:00:00",
+      "stadium": "Dallas",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 77",
+      "away_team": "Ganador 78",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 92,
+      "kickoff": "2026-07-05T19:00:00",
+      "stadium": "Atlanta",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 79",
+      "away_team": "Ganador 80",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 93,
+      "kickoff": "2026-07-06T19:00:00",
+      "stadium": "Los Ángeles",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 81",
+      "away_team": "Ganador 82",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 94,
+      "kickoff": "2026-07-06T19:00:00",
+      "stadium": "Miami",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 83",
+      "away_team": "Ganador 84",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 95,
+      "kickoff": "2026-07-07T19:00:00",
+      "stadium": "Nueva York/NJ",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 85",
+      "away_team": "Ganador 86",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 96,
+      "kickoff": "2026-07-07T19:00:00",
+      "stadium": "Vancouver",
+      "group_code": null,
+      "phase": "R16",
+      "home_team": "Ganador 87",
+      "away_team": "Ganador 88",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 97,
+      "kickoff": "2026-07-09T19:00:00",
+      "stadium": "Boston",
+      "group_code": null,
+      "phase": "QF",
+      "home_team": "Ganador 89",
+      "away_team": "Ganador 90",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 98,
+      "kickoff": "2026-07-09T19:00:00",
+      "stadium": "Los Ángeles",
+      "group_code": null,
+      "phase": "QF",
+      "home_team": "Ganador 93",
+      "away_team": "Ganador 94",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 99,
+      "kickoff": "2026-07-10T19:00:00",
+      "stadium": "Miami",
+      "group_code": null,
+      "phase": "QF",
+      "home_team": "Ganador 91",
+      "away_team": "Ganador 92",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 100,
+      "kickoff": "2026-07-10T19:00:00",
+      "stadium": "Kansas City",
+      "group_code": null,
+      "phase": "QF",
+      "home_team": "Ganador 95",
+      "away_team": "Ganador 96",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 101,
+      "kickoff": "2026-07-14T19:00:00",
+      "stadium": "Dallas",
+      "group_code": null,
+      "phase": "SF",
+      "home_team": "Ganador 97",
+      "away_team": "Ganador 98",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 102,
+      "kickoff": "2026-07-15T19:00:00",
+      "stadium": "Atlanta",
+      "group_code": null,
+      "phase": "SF",
+      "home_team": "Ganador 99",
+      "away_team": "Ganador 100",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 103,
+      "kickoff": "2026-07-18T19:00:00",
+      "stadium": "Miami",
+      "group_code": null,
+      "phase": "3RD",
+      "home_team": "Perdedor 101",
+      "away_team": "Perdedor 102",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "match_no": 104,
+      "kickoff": "2026-07-19T16:00:00",
+      "stadium": "Nueva York/NJ",
+      "group_code": null,
+      "phase": "FINAL",
+      "home_team": "Ganador 101",
+      "away_team": "Ganador 102",
+      "official_home": null,
+      "official_away": null,
+      "status": "SCHEDULED"
     }
   ],
   "pools": [
@@ -4459,6 +4843,510 @@
       "player": "Jared",
       "pred_home": 0,
       "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 1,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 2,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 3,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 4,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 5,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 6,
+      "player": "Eduardo",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 7,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 8,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 9,
+      "player": "Eduardo",
+      "pred_home": 5,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 10,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 11,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 12,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 13,
+      "player": "Eduardo",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 14,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 15,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 16,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 17,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 18,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 19,
+      "player": "Eduardo",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 20,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 21,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 22,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 23,
+      "player": "Eduardo",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 24,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 25,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 26,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 27,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 28,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 29,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 30,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 31,
+      "player": "Eduardo",
+      "pred_home": 6,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 32,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 33,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 34,
+      "player": "Eduardo",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 35,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 36,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 37,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 38,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 39,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 40,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 41,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 42,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 43,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 44,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 45,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 46,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 47,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 48,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 49,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 50,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 51,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 52,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 53,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 54,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 55,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 56,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 57,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 58,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "CASA",
+      "position": 59,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 60,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 61,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 62,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 63,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 64,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 65,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 66,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "CASA",
+      "position": 67,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "CASA",
+      "position": 68,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 69,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 70,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "CASA",
+      "position": 71,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "CASA",
+      "position": 72,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 4
     }
   ]
 }

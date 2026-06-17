@@ -87,21 +87,136 @@ async function fetchFootballDataOrg(apiKey) {
   const data = await res.json();
   return (data.matches || []).map((m) => ({
     id: String(m.id),
-    home: m.homeTeam?.name || m.homeTeam?.shortName,
-    away: m.awayTeam?.name || m.awayTeam?.shortName,
+    home: m.homeTeam?.name || m.homeTeam?.shortName || null,
+    away: m.awayTeam?.name || m.awayTeam?.shortName || null,
     homeScore: m.score?.fullTime?.home ?? null,
     awayScore: m.score?.fullTime?.away ?? null,
     rawStatus: m.status, // SCHEDULED, TIMED, IN_PLAY, PAUSED, FINISHED, ...
+    rawStage: m.stage,   // GROUP_STAGE, LAST_32, LAST_16, QUARTER_FINALS, ...
+    utcDate: m.utcDate,
+  }));
+}
+
+// --- provider: API-Sports (api-football.com) ----------------------------
+// League 1 = FIFA World Cup. Season is the tournament year (e.g. 2026).
+async function fetchApiSports(apiKey) {
+  const league = process.env.FOOTBALL_API_LEAGUE || "1";
+  const season = process.env.FOOTBALL_API_SEASON || "2026";
+  const url = `https://v3.football.api-sports.io/fixtures?league=${league}&season=${season}`;
+  const res = await fetch(url, { headers: { "x-apisports-key": apiKey } });
+  if (!res.ok) throw new Error(`api-sports ${res.status}`);
+  const data = await res.json();
+  if (data.errors && Object.keys(data.errors).length) {
+    const msg = Object.values(data.errors).join("; ");
+    throw new Error(`api-sports: ${msg}`);
+  }
+  return (data.response || []).map((m) => ({
+    id: String(m.fixture.id),
+    home: m.teams?.home?.name || null,
+    away: m.teams?.away?.name || null,
+    homeScore: m.goals?.home ?? null,
+    awayScore: m.goals?.away ?? null,
+    rawStatus: m.fixture?.status?.short, // NS, 1H, HT, 2H, ET, P, FT, AET, PEN, ...
+    rawStage: null, // api-sports uses league.round string; not wired yet
+    utcDate: m.fixture?.date,
   }));
 }
 
 function mapStatus(raw) {
+  // football-data.org statuses
   if (raw === "FINISHED") return "FINISHED";
   if (raw === "IN_PLAY" || raw === "PAUSED" || raw === "LIVE") return "LIVE";
+  // api-sports short codes
+  if (raw === "FT" || raw === "AET" || raw === "PEN") return "FINISHED";
+  if (raw === "1H" || raw === "HT" || raw === "2H" || raw === "ET" || raw === "P" || raw === "LIVE") return "LIVE";
   return "SCHEDULED";
 }
 
-const PROVIDERS = { "football-data": fetchFootballDataOrg };
+const PROVIDERS = {
+  "football-data": fetchFootballDataOrg,
+  "api-sports": fetchApiSports,
+};
+
+const STAGE_TO_PHASE = {
+  LAST_32: "R32",
+  LAST_16: "R16",
+  QUARTER_FINALS: "QF",
+  SEMI_FINALS: "SF",
+  THIRD_PLACE: "3RD",
+  FINAL: "FINAL",
+};
+const KO_PHASES = Object.values(STAGE_TO_PHASE);
+
+// Match knockout fixtures to our placeholder rows by (phase, chronological order).
+// The API reveals team names as teams qualify — we overwrite our placeholders,
+// and once status=FINISHED the scores are written too. Returns counts.
+function applyKnockouts(fixtures) {
+  const apiByPhase = {};
+  for (const f of fixtures) {
+    const phase = STAGE_TO_PHASE[f.rawStage];
+    if (!phase) continue;
+    (apiByPhase[phase] ||= []).push(f);
+  }
+  for (const list of Object.values(apiByPhase)) {
+    list.sort((a, b) => (a.utcDate || "").localeCompare(b.utcDate || ""));
+  }
+
+  const ours = db
+    .prepare(
+      `SELECT id, phase, home_team, away_team, kickoff
+       FROM matches WHERE phase IN ('R32','R16','QF','SF','3RD','FINAL')
+       ORDER BY phase, kickoff, id`
+    )
+    .all();
+  const ourByPhase = {};
+  for (const m of ours) (ourByPhase[m.phase] ||= []).push(m);
+
+  const updateMeta = db.prepare(
+    `UPDATE matches SET home_team=?, away_team=?, status=?,
+       kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
+     WHERE id=?`
+  );
+  const updateFinal = db.prepare(
+    `UPDATE matches SET home_team=?, away_team=?, official_home=?, official_away=?,
+       status=?, kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
+     WHERE id=?`
+  );
+
+  let matched = 0;
+  let namesUpdated = 0;
+  let scoresUpdated = 0;
+  const tx = db.transaction(() => {
+    for (const phase of KO_PHASES) {
+      const ourList = ourByPhase[phase] || [];
+      const apiList = apiByPhase[phase] || [];
+      const n = Math.min(ourList.length, apiList.length);
+      for (let i = 0; i < n; i++) {
+        const o = ourList[i];
+        const f = apiList[i];
+        matched += 1;
+        const home = f.home || o.home_team;
+        const away = f.away || o.away_team;
+        const namesChanged = home !== o.home_team || away !== o.away_team;
+        const status = mapStatus(f.rawStatus);
+        const now = new Date().toISOString();
+        const kickoff = f.utcDate ? f.utcDate.replace(/Z$/, "") : null;
+        if (status === "FINISHED" && f.homeScore != null && f.awayScore != null) {
+          updateFinal.run(
+            home, away, f.homeScore, f.awayScore, status,
+            kickoff, f.id, now, o.id
+          );
+          scoresUpdated += 1;
+          if (namesChanged) namesUpdated += 1;
+        } else {
+          updateMeta.run(home, away, status, kickoff, f.id, now, o.id);
+          if (namesChanged) namesUpdated += 1;
+        }
+      }
+    }
+  });
+  tx();
+  return { matched, namesUpdated, scoresUpdated };
+}
 
 // Pull latest results from the configured provider and update matches.
 // Returns a summary; safely no-ops when no API key is configured.
@@ -122,9 +237,15 @@ export async function refreshResults() {
   const select = db.prepare(
     "SELECT id, home_team, away_team FROM matches WHERE home_team=? AND away_team=?"
   );
-  const update = db.prepare(
+  // Only write scores when the match is FINISHED. For LIVE/SCHEDULED we still
+  // track the status so the UI can show "en vivo", but leave official_home/away
+  // alone to avoid showing partial scores mid-match.
+  const updateFinal = db.prepare(
     `UPDATE matches SET official_home=?, official_away=?, status=?,
        provider_fixture_id=?, updated_at=? WHERE id=?`
+  );
+  const updateStatus = db.prepare(
+    `UPDATE matches SET status=?, provider_fixture_id=?, updated_at=? WHERE id=?`
   );
   let updated = 0;
   let matched = 0;
@@ -137,21 +258,26 @@ export async function refreshResults() {
       if (!row) row = select.get(away, home); // try swapped orientation
       if (!row) continue;
       matched += 1;
-      const swapped = row.home_team !== home;
-      const oh = swapped ? f.awayScore : f.homeScore;
-      const oa = swapped ? f.homeScore : f.awayScore;
       const status = mapStatus(f.rawStatus);
-      update.run(
-        oh,
-        oa,
-        status,
-        f.id,
-        new Date().toISOString(),
-        row.id
-      );
-      updated += 1;
+      const now = new Date().toISOString();
+      if (status === "FINISHED") {
+        const swapped = row.home_team !== home;
+        const oh = swapped ? f.awayScore : f.homeScore;
+        const oa = swapped ? f.homeScore : f.awayScore;
+        updateFinal.run(oh, oa, status, f.id, now, row.id);
+        updated += 1;
+      } else {
+        updateStatus.run(status, f.id, now, row.id);
+      }
     }
   });
   tx(fixtures);
-  return { provider: providerName, fixtures: fixtures.length, matched, updated };
+  const ko = applyKnockouts(fixtures);
+  return {
+    provider: providerName,
+    fixtures: fixtures.length,
+    matched,
+    updated,
+    ko,
+  };
 }

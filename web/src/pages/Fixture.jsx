@@ -18,6 +18,15 @@ const fmtTime = (iso) =>
       })
     : "";
 
+const PHASE_LABEL = {
+  R32: "16vos",
+  R16: "8vos",
+  QF: "4tos",
+  SF: "Semis",
+  "3RD": "3°",
+  FINAL: "Final",
+};
+
 export default function Fixture() {
   const [matches, setMatches] = useState([]);
 
@@ -32,7 +41,6 @@ export default function Fixture() {
     };
   }, []);
 
-  // group by calendar day
   const days = {};
   for (const m of matches) {
     const key = (m.kickoff || "").slice(0, 10);
@@ -46,23 +54,27 @@ export default function Fixture() {
         .map((day) => (
           <div className="card day" key={day}>
             <h3 className="day-title">{fmtDay(day + "T00:00:00")}</h3>
-            {days[day].map((m) => (
-              <div className="match-row" key={m.id}>
-                <span className="time">{fmtTime(m.kickoff)}</span>
-                <span className="grp">{m.group_code}</span>
-                <span className="teams home">{m.home_team}</span>
-                <span className="score">
-                  {m.official_home != null
-                    ? `${m.official_home} - ${m.official_away}`
-                    : m.status === "LIVE"
-                    ? "• vivo"
-                    : "vs"}
-                </span>
-                <span className="teams away">{m.away_team}</span>
-                {m.status === "FINISHED" && <span className="tag done">FT</span>}
-                {m.status === "LIVE" && <span className="tag live">LIVE</span>}
-              </div>
-            ))}
+            {days[day].map((m) => {
+              const tag = m.phase === "GROUP" ? m.group_code : PHASE_LABEL[m.phase];
+              const isKO = m.phase !== "GROUP";
+              return (
+                <div className={"match-row" + (isKO ? " ko" : "")} key={m.id}>
+                  <span className="time">{fmtTime(m.kickoff)}</span>
+                  <span className={"grp" + (isKO ? " phase" : "")}>{tag}</span>
+                  <span className="teams home">{m.home_team}</span>
+                  <span className="score">
+                    {m.official_home != null
+                      ? `${m.official_home} - ${m.official_away}`
+                      : m.status === "LIVE"
+                      ? "• vivo"
+                      : "vs"}
+                  </span>
+                  <span className="teams away">{m.away_team}</span>
+                  {m.status === "FINISHED" && <span className="tag done">FT</span>}
+                  {m.status === "LIVE" && <span className="tag live">LIVE</span>}
+                </div>
+              );
+            })}
           </div>
         ))}
     </div>

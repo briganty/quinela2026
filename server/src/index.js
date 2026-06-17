@@ -6,6 +6,8 @@ import { fileURLToPath } from "node:url";
 import { loadSeedIfEmpty } from "./db.js";
 import poolsRouter from "./routes/pools.js";
 import matchesRouter from "./routes/matches.js";
+import adminRouter from "./routes/admin.js";
+import announcementsRouter from "./routes/announcements.js";
 import { refreshResults } from "./services/footballApi.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -20,6 +22,8 @@ app.use(express.json());
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 app.use("/api/pools", poolsRouter);
 app.use("/api/matches", matchesRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api/announcements", announcementsRouter);
 
 // Manual trigger for the results refresh (handy for testing the integration).
 app.post("/api/refresh", async (req, res) => {

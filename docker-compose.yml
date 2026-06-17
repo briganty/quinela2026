@@ -9,6 +9,8 @@ services:
       - FOOTBALL_API_KEY=${FOOTBALL_API_KEY:-}
       - FOOTBALL_PROVIDER=${FOOTBALL_PROVIDER:-football-data}
       - FOOTBALL_COMPETITION=${FOOTBALL_COMPETITION:-WC}
+      - FOOTBALL_API_LEAGUE=${FOOTBALL_API_LEAGUE:-1}
+      - FOOTBALL_API_SEASON=${FOOTBALL_API_SEASON:-2026}
       - POLL_CRON=${POLL_CRON:-*/10 * * * *}
       # Token opcional para cargar/corregir resultados a mano (PUT /api/matches/:id/result)
       - ADMIN_TOKEN=${ADMIN_TOKEN:-}
