@@ -4,6 +4,8 @@ export const getPools = () => j("/api/pools");
 export const getStandings = (poolId) => j(`/api/pools/${poolId}/standings`);
 export const getGrid = (poolId) => j(`/api/pools/${poolId}/grid`);
 export const getMatches = () => j("/api/matches");
+export const getGroups = () => j("/api/groups");
+export const getFeed = () => j("/api/feed");
 
 export async function checkAdmin(token) {
   const r = await fetch("/api/admin/check", {

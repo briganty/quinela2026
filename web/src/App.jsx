@@ -3,8 +3,10 @@ import { getPools, checkAdmin } from "./api.js";
 import Standings from "./pages/Standings.jsx";
 import PredictionGrid from "./pages/PredictionGrid.jsx";
 import Fixture from "./pages/Fixture.jsx";
+import Groups from "./pages/Groups.jsx";
 import AdminLogin from "./AdminLogin.jsx";
 import Announcements from "./Announcements.jsx";
+import LiveFeed from "./LiveFeed.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
 import Settings from "./Settings.jsx";
 
@@ -12,6 +14,7 @@ const VIEWS = [
   { id: "standings", label: "Posiciones", icon: "🏆" },
   { id: "grid", label: "Pronósticos", icon: "📋" },
   { id: "fixture", label: "Calendario", icon: "🗓️" },
+  { id: "groups", label: "Grupos", icon: "🌍" },
 ];
 
 const ADMIN_KEY = "quiniela:admin_token";
@@ -84,17 +87,20 @@ export default function App() {
         ))}
       </nav>
 
+      <LiveFeed />
       <Announcements adminToken={adminToken} />
 
       <main className="content">
-        {poolId == null ? (
+        {view === "fixture" ? (
+          <Fixture />
+        ) : view === "groups" ? (
+          <Groups />
+        ) : poolId == null ? (
           <p className="muted">Cargando…</p>
         ) : view === "standings" ? (
           <Standings poolId={poolId} />
-        ) : view === "grid" ? (
-          <PredictionGrid poolId={poolId} adminToken={adminToken} />
         ) : (
-          <Fixture />
+          <PredictionGrid poolId={poolId} adminToken={adminToken} />
         )}
       </main>
 

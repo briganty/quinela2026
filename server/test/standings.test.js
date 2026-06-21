@@ -8,23 +8,30 @@ import { rmSync } from "node:fs";
 const TMP_DB = resolve(tmpdir(), `quiniela-test-${process.pid}.db`);
 process.env.DB_PATH = TMP_DB;
 
-let standings, listPools;
+let standings, listPools, syncNewPools;
 before(async () => {
   rmSync(TMP_DB, { force: true });
   const db = await import("../src/db.js");
   db.loadSeedIfEmpty();
+  syncNewPools = db.syncNewPools;
   ({ standings, listPools } = await import("../src/queries.js"));
 });
 
-test("seed loads both pools", () => {
+test("seed loads all pools", () => {
   const names = listPools().map((p) => p.name).sort();
-  assert.deepEqual(names, ["ABU", "CASA"]);
+  assert.deepEqual(names, ["ABU", "Brilum", "CASA"]);
+});
+
+test("syncNewPools is a no-op once every pool exists", () => {
+  assert.deepEqual(syncNewPools(), []);
+  const names = listPools().map((p) => p.name).sort();
+  assert.deepEqual(names, ["ABU", "Brilum", "CASA"]); // no duplicates
 });
 
 test("CASA standings reproduce the Excel totals", () => {
   const casa = listPools().find((p) => p.name === "CASA");
   const t = Object.fromEntries(
-    standings(casa.id).map((r) => [r.name, r.points])
+    standings(casa.id).rows.map((r) => [r.name, r.points])
   );
   assert.equal(t.Sammy, 11);
   assert.equal(t.Tasha, 8);
@@ -34,7 +41,7 @@ test("CASA standings reproduce the Excel totals", () => {
 
 test("standings are sorted by points desc", () => {
   const casa = listPools().find((p) => p.name === "CASA");
-  const rows = standings(casa.id);
+  const { rows } = standings(casa.id);
   for (let i = 1; i < rows.length; i++) {
     assert.ok(rows[i - 1].points >= rows[i].points);
   }

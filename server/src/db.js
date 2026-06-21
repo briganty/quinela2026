@@ -29,6 +29,8 @@ function migrate() {
       away_team TEXT NOT NULL,
       official_home INTEGER,
       official_away INTEGER,
+      live_home INTEGER,
+      live_away INTEGER,
       status TEXT DEFAULT 'SCHEDULED',
       provider_fixture_id TEXT,
       updated_at TEXT
@@ -68,7 +70,30 @@ function migrate() {
       key TEXT PRIMARY KEY,
       value TEXT
     );
+    CREATE TABLE IF NOT EXISTS match_events (
+      id INTEGER PRIMARY KEY,
+      match_id INTEGER NOT NULL REFERENCES matches(id),
+      type TEXT NOT NULL,            -- GOAL | YELLOW | RED
+      provider_event_id TEXT,
+      team TEXT,
+      player TEXT,
+      minute INTEGER,
+      created_at TEXT,
+      UNIQUE(match_id, provider_event_id)
+    );
+    DROP TABLE IF EXISTS match_goals; -- superseded by match_events (transient data)
   `);
+  // Additive column migrations for databases created before a column existed.
+  ensureColumn("matches", "live_home", "INTEGER");
+  ensureColumn("matches", "live_away", "INTEGER");
+}
+
+// Add a column to a table if it isn't there yet (SQLite has no IF NOT EXISTS
+// for ADD COLUMN). Safe to call on every boot.
+function ensureColumn(table, column, type) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all();
+  if (cols.some((c) => c.name === column)) return;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${type}`);
 }
 
 // Read a runtime-overridable setting. DB wins; falls back to the env var.
@@ -93,13 +118,77 @@ function isEmpty() {
   return db.prepare("SELECT COUNT(*) AS n FROM matches").get().n === 0;
 }
 
-export function loadSeedIfEmpty() {
-  migrate();
-  if (!isEmpty()) return false;
+function readSeed() {
   if (!existsSync(SEED_PATH)) {
     throw new Error(`Seed file not found at ${SEED_PATH}. Run the import script.`);
   }
-  const seed = JSON.parse(readFileSync(SEED_PATH, "utf8"));
+  return JSON.parse(readFileSync(SEED_PATH, "utf8"));
+}
+
+// Insert the given pools (by name) from `seed` into the DB. The matches table
+// is assumed to already be populated; pool_matches link to it by match_no.
+function insertPools(seed, poolNames) {
+  const want = new Set(poolNames);
+  if (!want.size) return;
+  const matchIdByNo = new Map(
+    db.prepare("SELECT id, match_no FROM matches").all().map((r) => [r.match_no, r.id])
+  );
+
+  const insPool = db.prepare("INSERT INTO pools (name) VALUES (?)");
+  const poolIdByName = new Map();
+  for (const p of seed.pools) {
+    if (!want.has(p.name)) continue;
+    poolIdByName.set(p.name, insPool.run(p.name).lastInsertRowid);
+  }
+
+  const insPlayer = db.prepare(
+    "INSERT INTO players (pool_id, name, display_order) VALUES (?, ?, ?)"
+  );
+  const playerId = new Map(); // `${pool}#${name}` -> id
+  for (const pl of seed.players) {
+    if (!want.has(pl.pool)) continue;
+    const id = insPlayer.run(
+      poolIdByName.get(pl.pool),
+      pl.name,
+      pl.order ?? 0
+    ).lastInsertRowid;
+    playerId.set(`${pl.pool}#${pl.name}`, id);
+  }
+
+  const insPM = db.prepare(`INSERT INTO pool_matches
+    (pool_id, position, home_team, away_team, match_id, reversed)
+    VALUES (?, ?, ?, ?, ?, ?)`);
+  const pmId = new Map(); // `${pool}#${position}` -> id
+  for (const pm of seed.pool_matches) {
+    if (!want.has(pm.pool)) continue;
+    const id = insPM.run(
+      poolIdByName.get(pm.pool),
+      pm.position,
+      pm.home_team,
+      pm.away_team,
+      pm.match_no != null ? matchIdByNo.get(pm.match_no) : null,
+      pm.reversed ? 1 : 0
+    ).lastInsertRowid;
+    pmId.set(`${pm.pool}#${pm.position}`, id);
+  }
+
+  const insPred = db.prepare(`INSERT INTO predictions
+    (pool_match_id, player_id, pred_home, pred_away) VALUES (?, ?, ?, ?)`);
+  for (const pr of seed.predictions) {
+    if (!want.has(pr.pool)) continue;
+    insPred.run(
+      pmId.get(`${pr.pool}#${pr.position}`),
+      playerId.get(`${pr.pool}#${pr.player}`),
+      pr.pred_home,
+      pr.pred_away
+    );
+  }
+}
+
+export function loadSeedIfEmpty() {
+  migrate();
+  if (!isEmpty()) return false;
+  const seed = readSeed();
   const tx = db.transaction(() => {
     const insTeam = db.prepare(
       "INSERT INTO teams (name, group_code) VALUES (?, ?)"
@@ -111,57 +200,26 @@ export function loadSeedIfEmpty() {
        official_home, official_away, status)
       VALUES (@match_no,@kickoff,@stadium,@group_code,@phase,@home_team,@away_team,
               @official_home,@official_away,@status)`);
-    const matchIdByNo = new Map();
-    for (const m of seed.matches) {
-      const info = insMatch.run(m);
-      matchIdByNo.set(m.match_no, info.lastInsertRowid);
-    }
+    for (const m of seed.matches) insMatch.run(m);
 
-    const insPool = db.prepare("INSERT INTO pools (name) VALUES (?)");
-    const poolIdByName = new Map();
-    for (const p of seed.pools)
-      poolIdByName.set(p.name, insPool.run(p.name).lastInsertRowid);
-
-    const insPlayer = db.prepare(
-      "INSERT INTO players (pool_id, name, display_order) VALUES (?, ?, ?)"
-    );
-    const playerId = new Map(); // `${pool}#${name}` -> id
-    for (const pl of seed.players) {
-      const id = insPlayer.run(
-        poolIdByName.get(pl.pool),
-        pl.name,
-        pl.order ?? 0
-      ).lastInsertRowid;
-      playerId.set(`${pl.pool}#${pl.name}`, id);
-    }
-
-    const insPM = db.prepare(`INSERT INTO pool_matches
-      (pool_id, position, home_team, away_team, match_id, reversed)
-      VALUES (?, ?, ?, ?, ?, ?)`);
-    const pmId = new Map(); // `${pool}#${position}` -> id
-    for (const pm of seed.pool_matches) {
-      const id = insPM.run(
-        poolIdByName.get(pm.pool),
-        pm.position,
-        pm.home_team,
-        pm.away_team,
-        pm.match_no != null ? matchIdByNo.get(pm.match_no) : null,
-        pm.reversed ? 1 : 0
-      ).lastInsertRowid;
-      pmId.set(`${pm.pool}#${pm.position}`, id);
-    }
-
-    const insPred = db.prepare(`INSERT INTO predictions
-      (pool_match_id, player_id, pred_home, pred_away) VALUES (?, ?, ?, ?)`);
-    for (const pr of seed.predictions) {
-      insPred.run(
-        pmId.get(`${pr.pool}#${pr.position}`),
-        playerId.get(`${pr.pool}#${pr.player}`),
-        pr.pred_home,
-        pr.pred_away
-      );
-    }
+    insertPools(seed, seed.pools.map((p) => p.name));
   });
   tx();
   return true;
+}
+
+// Additively insert pools present in seed.json but not yet in the DB. Lets a
+// new quiniela (a new pool) reach already-seeded deployments on restart,
+// without touching existing pools. Returns the names added.
+export function syncNewPools() {
+  migrate();
+  if (isEmpty() || !existsSync(SEED_PATH)) return [];
+  const seed = readSeed();
+  const existing = new Set(
+    db.prepare("SELECT name FROM pools").all().map((r) => r.name)
+  );
+  const toAdd = seed.pools.map((p) => p.name).filter((n) => !existing.has(n));
+  if (!toAdd.length) return [];
+  db.transaction(() => insertPools(seed, toAdd))();
+  return toAdd;
 }

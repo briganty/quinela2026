@@ -41,17 +41,27 @@ export default function Fixture() {
     };
   }, []);
 
+  // Hide matches already played; keep upcoming and in-progress ones. Days left
+  // without any pending match drop out automatically.
   const days = {};
   for (const m of matches) {
+    if (m.status === "FINISHED") continue;
     const key = (m.kickoff || "").slice(0, 10);
     (days[key] ||= []).push(m);
+  }
+  const dayKeys = Object.keys(days).sort();
+
+  if (matches.length && !dayKeys.length) {
+    return (
+      <div className="fixture">
+        <p className="muted empty-note">No quedan partidos por jugar.</p>
+      </div>
+    );
   }
 
   return (
     <div className="fixture">
-      {Object.keys(days)
-        .sort()
-        .map((day) => (
+      {dayKeys.map((day) => (
           <div className="card day" key={day}>
             <h3 className="day-title">{fmtDay(day + "T00:00:00")}</h3>
             {days[day].map((m) => {

@@ -3,9 +3,11 @@ import cron from "node-cron";
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadSeedIfEmpty } from "./db.js";
+import { loadSeedIfEmpty, syncNewPools } from "./db.js";
 import poolsRouter from "./routes/pools.js";
 import matchesRouter from "./routes/matches.js";
+import groupsRouter from "./routes/groups.js";
+import feedRouter from "./routes/feed.js";
 import adminRouter from "./routes/admin.js";
 import announcementsRouter from "./routes/announcements.js";
 import { refreshResults } from "./services/footballApi.js";
@@ -16,12 +18,18 @@ const PORT = process.env.PORT || 3000;
 const seeded = loadSeedIfEmpty();
 console.log(seeded ? "Database seeded from seed.json" : "Database already initialized");
 
+// Add any new quiniela (pool) introduced in seed.json to an already-seeded DB.
+const addedPools = syncNewPools();
+if (addedPools.length) console.log("New pools added:", addedPools.join(", "));
+
 const app = express();
 app.use(express.json());
 
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 app.use("/api/pools", poolsRouter);
 app.use("/api/matches", matchesRouter);
+app.use("/api/groups", groupsRouter);
+app.use("/api/feed", feedRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/announcements", announcementsRouter);
 

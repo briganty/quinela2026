@@ -1449,6 +1449,9 @@
     },
     {
       "name": "ABU"
+    },
+    {
+      "name": "Brilum"
     }
   ],
   "players": [
@@ -1501,6 +1504,21 @@
       "pool": "ABU",
       "name": "Jared",
       "order": 5
+    },
+    {
+      "pool": "Brilum",
+      "name": "Eduardo",
+      "order": 0
+    },
+    {
+      "pool": "Brilum",
+      "name": "Andri",
+      "order": 1
+    },
+    {
+      "pool": "Brilum",
+      "name": "Emi",
+      "order": 2
     }
   ],
   "pool_matches": [
@@ -2278,6 +2296,342 @@
       "home_team": "Panamá",
       "away_team": "Inglaterra",
       "match_no": 67,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 1,
+      "home_team": "Brasil",
+      "away_team": "Haití",
+      "match_no": 31,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 2,
+      "home_team": "Turquía",
+      "away_team": "Paraguay",
+      "match_no": 32,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 3,
+      "home_team": "Países Bajos",
+      "away_team": "Suecia",
+      "match_no": 33,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 4,
+      "home_team": "Alemania",
+      "away_team": "Costa de Marfil",
+      "match_no": 34,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 5,
+      "home_team": "Ecuador",
+      "away_team": "Curazao",
+      "match_no": 35,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 6,
+      "home_team": "Túnez",
+      "away_team": "Japón",
+      "match_no": 36,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 7,
+      "home_team": "España",
+      "away_team": "Arabia Saudita",
+      "match_no": 37,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 8,
+      "home_team": "Bélgica",
+      "away_team": "Irán",
+      "match_no": 38,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 9,
+      "home_team": "Uruguay",
+      "away_team": "Cabo Verde",
+      "match_no": 39,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 10,
+      "home_team": "Nueva Zelanda",
+      "away_team": "Egipto",
+      "match_no": 40,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 11,
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "match_no": 41,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 12,
+      "home_team": "Francia",
+      "away_team": "Irak",
+      "match_no": 42,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 13,
+      "home_team": "Noruega",
+      "away_team": "Senegal",
+      "match_no": 43,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 14,
+      "home_team": "Jordania",
+      "away_team": "Argelia",
+      "match_no": 44,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 15,
+      "home_team": "Portugal",
+      "away_team": "Uzbekistán",
+      "match_no": 45,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 16,
+      "home_team": "Inglaterra",
+      "away_team": "Ghana",
+      "match_no": 46,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 17,
+      "home_team": "Panamá",
+      "away_team": "Croacia",
+      "match_no": 47,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 18,
+      "home_team": "Colombia",
+      "away_team": "RD Congo",
+      "match_no": 48,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 19,
+      "home_team": "Suiza",
+      "away_team": "Canadá",
+      "match_no": 49,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 20,
+      "home_team": "Bosnia y Herzegovina",
+      "away_team": "Qatar",
+      "match_no": 50,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 21,
+      "home_team": "Escocia",
+      "away_team": "Brasil",
+      "match_no": 51,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 22,
+      "home_team": "Marruecos",
+      "away_team": "Haití",
+      "match_no": 52,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 23,
+      "home_team": "Chequia",
+      "away_team": "México",
+      "match_no": 53,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 24,
+      "home_team": "Sudáfrica",
+      "away_team": "Corea del Sur",
+      "match_no": 54,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 25,
+      "home_team": "Curazao",
+      "away_team": "Costa de Marfil",
+      "match_no": 55,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 26,
+      "home_team": "Ecuador",
+      "away_team": "Alemania",
+      "match_no": 56,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 27,
+      "home_team": "Japón",
+      "away_team": "Suecia",
+      "match_no": 57,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 28,
+      "home_team": "Túnez",
+      "away_team": "Países Bajos",
+      "match_no": 58,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 29,
+      "home_team": "Turquía",
+      "away_team": "Estados Unidos",
+      "match_no": 59,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 30,
+      "home_team": "Paraguay",
+      "away_team": "Australia",
+      "match_no": 60,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 31,
+      "home_team": "Noruega",
+      "away_team": "Francia",
+      "match_no": 61,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 32,
+      "home_team": "Senegal",
+      "away_team": "Irak",
+      "match_no": 62,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 33,
+      "home_team": "Cabo Verde",
+      "away_team": "Arabia Saudita",
+      "match_no": 63,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 34,
+      "home_team": "Uruguay",
+      "away_team": "España",
+      "match_no": 64,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 35,
+      "home_team": "Egipto",
+      "away_team": "Irán",
+      "match_no": 65,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 36,
+      "home_team": "Nueva Zelanda",
+      "away_team": "Bélgica",
+      "match_no": 66,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 37,
+      "home_team": "Panamá",
+      "away_team": "Inglaterra",
+      "match_no": 67,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 38,
+      "home_team": "Croacia",
+      "away_team": "Ghana",
+      "match_no": 68,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 39,
+      "home_team": "Colombia",
+      "away_team": "Portugal",
+      "match_no": 69,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 40,
+      "home_team": "RD Congo",
+      "away_team": "Uzbekistán",
+      "match_no": 70,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 41,
+      "home_team": "Argelia",
+      "away_team": "Austria",
+      "match_no": 71,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 42,
+      "home_team": "Jordania",
+      "away_team": "Argentina",
+      "match_no": 72,
       "reversed": 0
     }
   ],
@@ -5346,6 +5700,692 @@
       "position": 72,
       "player": "Eduardo",
       "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 1,
+      "player": "Eduardo",
+      "pred_home": 6,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 1,
+      "player": "Andri",
+      "pred_home": 5,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 1,
+      "player": "Emi",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 2,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 2,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 2,
+      "player": "Emi",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 3,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 3,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 3,
+      "player": "Emi",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 4,
+      "player": "Eduardo",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 4,
+      "player": "Andri",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 4,
+      "player": "Emi",
+      "pred_home": 7,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 5,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 5,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 5,
+      "player": "Emi",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 6,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 6,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 6,
+      "player": "Emi",
+      "pred_home": 0,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 7,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 7,
+      "player": "Andri",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 7,
+      "player": "Emi",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 8,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 8,
+      "player": "Andri",
+      "pred_home": 4,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 8,
+      "player": "Emi",
+      "pred_home": 2,
+      "pred_away": 5
+    },
+    {
+      "pool": "Brilum",
+      "position": 9,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 9,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 9,
+      "player": "Emi",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 10,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 10,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 10,
+      "player": "Emi",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 11,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 11,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 11,
+      "player": "Emi",
+      "pred_home": 4,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 12,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 12,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 12,
+      "player": "Emi",
+      "pred_home": 3,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 13,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 13,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 13,
+      "player": "Emi",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 14,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 14,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 14,
+      "player": "Emi",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 15,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 15,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 16,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 16,
+      "player": "Andri",
+      "pred_home": 4,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 17,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 17,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 18,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 18,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 19,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 19,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 20,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 20,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 21,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 21,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 22,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 22,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 23,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 23,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 24,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 24,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 25,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 25,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 26,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 26,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 27,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 27,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 28,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 28,
+      "player": "Andri",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 29,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 29,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 30,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 30,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 31,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 31,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 32,
+      "player": "Eduardo",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 32,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 33,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 33,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 34,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 34,
+      "player": "Andri",
+      "pred_home": 2,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 35,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 35,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 36,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 36,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 37,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 37,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 38,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 38,
+      "player": "Andri",
+      "pred_home": 3,
+      "pred_away": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 39,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 39,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 40,
+      "player": "Eduardo",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 40,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 1
+    },
+    {
+      "pool": "Brilum",
+      "position": 41,
+      "player": "Eduardo",
+      "pred_home": 2,
+      "pred_away": 2
+    },
+    {
+      "pool": "Brilum",
+      "position": 41,
+      "player": "Andri",
+      "pred_home": 1,
+      "pred_away": 3
+    },
+    {
+      "pool": "Brilum",
+      "position": 42,
+      "player": "Eduardo",
+      "pred_home": 0,
+      "pred_away": 4
+    },
+    {
+      "pool": "Brilum",
+      "position": 42,
+      "player": "Andri",
+      "pred_home": 1,
       "pred_away": 4
     }
   ]

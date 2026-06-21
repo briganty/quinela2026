@@ -173,11 +173,18 @@ function applyKnockouts(fixtures) {
 
   const updateMeta = db.prepare(
     `UPDATE matches SET home_team=?, away_team=?, status=?,
+       live_home=NULL, live_away=NULL,
        kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
+     WHERE id=?`
+  );
+  const updateLive = db.prepare(
+    `UPDATE matches SET home_team=?, away_team=?, live_home=?, live_away=?,
+       status=?, kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
      WHERE id=?`
   );
   const updateFinal = db.prepare(
     `UPDATE matches SET home_team=?, away_team=?, official_home=?, official_away=?,
+       live_home=NULL, live_away=NULL,
        status=?, kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
      WHERE id=?`
   );
@@ -207,6 +214,12 @@ function applyKnockouts(fixtures) {
           );
           scoresUpdated += 1;
           if (namesChanged) namesUpdated += 1;
+        } else if (status === "LIVE" && f.homeScore != null && f.awayScore != null) {
+          updateLive.run(
+            home, away, f.homeScore, f.awayScore, status,
+            kickoff, f.id, now, o.id
+          );
+          if (namesChanged) namesUpdated += 1;
         } else {
           updateMeta.run(home, away, status, kickoff, f.id, now, o.id);
           if (namesChanged) namesUpdated += 1;
@@ -216,6 +229,86 @@ function applyKnockouts(fixtures) {
   });
   tx();
   return { matched, namesUpdated, scoresUpdated };
+}
+
+// Classify an api-sports event into the kinds we surface, or null to skip.
+function eventKind(e) {
+  const detail = e.detail || "";
+  if (e.type === "Goal") return detail === "Missed Penalty" ? null : "GOAL";
+  if (e.type === "Card") {
+    if (/red/i.test(detail) || /second yellow/i.test(detail)) return "RED";
+    if (/yellow/i.test(detail)) return "YELLOW";
+  }
+  return null;
+}
+
+// Goal + card events for one fixture (api-sports): team, player, minute, type.
+async function fetchApiSportsEvents(apiKey, fixtureId) {
+  const url = `https://v3.football.api-sports.io/fixtures/events?fixture=${fixtureId}`;
+  const res = await fetch(url, { headers: { "x-apisports-key": apiKey } });
+  if (!res.ok) throw new Error(`api-sports events ${res.status}`);
+  const data = await res.json();
+  const out = [];
+  for (const e of data.response || []) {
+    const kind = eventKind(e);
+    if (!kind) continue;
+    out.push({
+      type: kind,
+      // Stable id within a fixture so re-polling doesn't duplicate an event.
+      providerEventId: [
+        kind,
+        e.time?.elapsed ?? "",
+        e.time?.extra ?? "",
+        e.player?.id ?? e.player?.name ?? "",
+        e.detail ?? "",
+      ].join("-"),
+      team: e.team?.name || null,
+      player: e.player?.name || null,
+      minute: e.time?.elapsed ?? null,
+    });
+  }
+  return out;
+}
+
+// Keep the live event feed in sync: pull goals + cards for in-progress matches
+// and clear a match's events once it is no longer live (so the notifications go
+// away at FT). Event detail is only available from api-sports; football-data's
+// free tier omits scorers/cards.
+async function syncEvents(providerName, apiKey) {
+  db.prepare(
+    "DELETE FROM match_events WHERE match_id IN (SELECT id FROM matches WHERE status != 'LIVE')"
+  ).run();
+  if (providerName !== "api-sports") return { liveTracked: 0, eventsAdded: 0 };
+
+  const liveMatches = db
+    .prepare(
+      `SELECT id, provider_fixture_id FROM matches
+       WHERE status = 'LIVE' AND provider_fixture_id IS NOT NULL`
+    )
+    .all();
+  const ins = db.prepare(
+    `INSERT OR IGNORE INTO match_events
+       (match_id, type, provider_event_id, team, player, minute, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`
+  );
+  let eventsAdded = 0;
+  for (const m of liveMatches) {
+    let events;
+    try {
+      events = await fetchApiSportsEvents(apiKey, m.provider_fixture_id);
+    } catch {
+      continue; // a single fixture failing shouldn't break the refresh
+    }
+    const now = new Date().toISOString();
+    for (const e of events) {
+      const team = resolveTeam(e.team) || e.team;
+      const info = ins.run(
+        m.id, e.type, e.providerEventId, team, e.player, e.minute, now
+      );
+      if (info.changes) eventsAdded += 1;
+    }
+  }
+  return { liveTracked: liveMatches.length, eventsAdded };
 }
 
 // Pull latest results from the configured provider and update matches.
@@ -240,15 +333,22 @@ export async function refreshResults() {
   const select = db.prepare(
     "SELECT id, home_team, away_team FROM matches WHERE home_team=? AND away_team=?"
   );
-  // Only write scores when the match is FINISHED. For LIVE/SCHEDULED we still
-  // track the status so the UI can show "en vivo", but leave official_home/away
-  // alone to avoid showing partial scores mid-match.
+  // Official scores are written only when the match is FINISHED, so the
+  // standings reflect final results. For a LIVE match we record the current
+  // score in live_home/live_away (kept separate from official) so the grid can
+  // show provisional points without polluting the official table.
   const updateFinal = db.prepare(
-    `UPDATE matches SET official_home=?, official_away=?, status=?,
+    `UPDATE matches SET official_home=?, official_away=?,
+       live_home=NULL, live_away=NULL, status=?,
+       provider_fixture_id=?, updated_at=? WHERE id=?`
+  );
+  const updateLive = db.prepare(
+    `UPDATE matches SET live_home=?, live_away=?, status=?,
        provider_fixture_id=?, updated_at=? WHERE id=?`
   );
   const updateStatus = db.prepare(
-    `UPDATE matches SET status=?, provider_fixture_id=?, updated_at=? WHERE id=?`
+    `UPDATE matches SET status=?, live_home=NULL, live_away=NULL,
+       provider_fixture_id=?, updated_at=? WHERE id=?`
   );
   let updated = 0;
   let matched = 0;
@@ -263,12 +363,14 @@ export async function refreshResults() {
       matched += 1;
       const status = mapStatus(f.rawStatus);
       const now = new Date().toISOString();
+      const swapped = row.home_team !== home;
+      const sh = swapped ? f.awayScore : f.homeScore;
+      const sa = swapped ? f.homeScore : f.awayScore;
       if (status === "FINISHED") {
-        const swapped = row.home_team !== home;
-        const oh = swapped ? f.awayScore : f.homeScore;
-        const oa = swapped ? f.homeScore : f.awayScore;
-        updateFinal.run(oh, oa, status, f.id, now, row.id);
+        updateFinal.run(sh, sa, status, f.id, now, row.id);
         updated += 1;
+      } else if (status === "LIVE" && sh != null && sa != null) {
+        updateLive.run(sh, sa, status, f.id, now, row.id);
       } else {
         updateStatus.run(status, f.id, now, row.id);
       }
@@ -276,11 +378,13 @@ export async function refreshResults() {
   });
   tx(fixtures);
   const ko = applyKnockouts(fixtures);
+  const events = await syncEvents(providerName, apiKey);
   return {
     provider: providerName,
     fixtures: fixtures.length,
     matched,
     updated,
     ko,
+    events,
   };
 }

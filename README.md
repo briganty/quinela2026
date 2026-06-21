@@ -12,12 +12,19 @@ marcadores automáticamente** tras cada partido vía una API de fútbol.
 
 ## Quinielas y jugadores
 
-El Excel contiene **dos quinielas independientes**, ambas soportadas en la app:
+La app soporta **varias quinielas independientes** (cada una es un *tab*/pool):
 
 | Pool | Jugadores | Partidos |
 |------|-----------|----------|
 | **CASA** | Sammy, Tasha, Tony, Eduardo | los 72 partidos de fase de grupos |
 | **ABU**  | Sammy, Tasha, Tony, Nury, Abu, Jared | 25 partidos seleccionados |
+| **Brilum** | Eduardo, Andri, Emi | 42 partidos seleccionados |
+
+> **Agregar otra quiniela**: cada pool nuevo se genera con un script que la añade a
+> `server/data/seed.json` (p. ej. `node scripts/add-brilum.js`, que lee
+> `assets/EXCEL_MUNDIAL_1-2.xlsx`). Al arrancar, el servidor inserta en la base cualquier
+> pool de `seed.json` que aún no exista (`syncNewPools`), así que un despliegue ya
+> sembrado toma la quiniela nueva con solo reiniciar — sin borrar el volumen.
 
 ## Funcionalidad
 

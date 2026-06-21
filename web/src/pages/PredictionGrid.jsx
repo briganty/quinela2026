@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { getGrid, savePrediction } from "../api.js";
 
-const ptsClass = (p) =>
-  p === 3 ? "cell exact" : p === 1 ? "cell outcome" : p === 0 ? "cell miss" : "cell";
+const ptsClass = (p, live) => {
+  const base =
+    p === 3 ? "cell exact" : p === 1 ? "cell outcome" : p === 0 ? "cell miss" : "cell";
+  return live ? base + " live" : base;
+};
 
 function EditCell({ initial, onSave, onCancel }) {
   const [h, setH] = useState(initial?.h ?? "");
@@ -105,11 +108,18 @@ export default function PredictionGrid({ poolId, adminToken }) {
                 </span>
               </td>
               <td className="official">
-                {row.official
-                  ? `${row.official.home}-${row.official.away}`
-                  : row.status === "LIVE"
-                  ? "EN VIVO"
-                  : "—"}
+                {row.official ? (
+                  `${row.official.home}-${row.official.away}`
+                ) : row.live ? (
+                  <span className="live-score">
+                    {row.live.home}-{row.live.away}
+                    <span className="live-dot" aria-label="en vivo" /> EN VIVO
+                  </span>
+                ) : row.status === "LIVE" ? (
+                  "EN VIVO"
+                ) : (
+                  "—"
+                )}
               </td>
               {row.cells.map((c) => {
                 const key = `${row.pool_match_id}#${c.player_id}`;
@@ -124,7 +134,7 @@ export default function PredictionGrid({ poolId, adminToken }) {
                   <td
                     key={c.player_id}
                     className={
-                      ptsClass(c.points) + (editable ? " editable" : "")
+                      ptsClass(c.points, c.live) + (editable ? " editable" : "")
                     }
                     onClick={() => editable && !isEditing && setEditing(key)}
                   >

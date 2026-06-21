@@ -138,6 +138,67 @@ body {
 .muted { color: var(--muted); }
 
 /* --- Announcements banner --- */
+/* --- Live feed (next match / in progress / goals) --- */
+.live-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+.feed-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--panel-2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow-sm);
+}
+.feed-card.live { border-left: 4px solid var(--brand-red); }
+.feed-card.next { border-left: 4px solid var(--brand-navy); }
+.feed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 2px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.feed-badge.live { color: var(--brand-red); }
+.feed-badge.next { color: var(--brand-navy); }
+.feed-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.feed-main strong { font-size: 0.95rem; }
+.feed-main em { color: var(--muted); font-style: normal; padding: 0 3px; }
+.feed-score .sc { font-weight: 800; font-variant-numeric: tabular-nums; }
+.feed-score .dash { padding: 0 2px; color: var(--muted); }
+.feed-when { color: var(--muted); font-size: 0.78rem; }
+.feed-goals {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.feed-goals li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+}
+.goal-icon { font-size: 0.8rem; }
+.goal-min {
+  min-width: 1.9rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.goal-team { font-weight: 700; }
+.goal-player { color: var(--muted); }
+
 .announcements {
   display: flex;
   flex-direction: column;
@@ -241,6 +302,86 @@ body {
 .cell.outcome .badge { background: var(--accent-2); color: #ffffff; }
 .cell.miss .badge { background: #f4d3d8; color: #8a1d2c; }
 :root[data-theme="dark"] .cell.miss .badge { background: #4a2230; color: #ffb3c0; }
+
+/* Live / provisional points: match in progress, scored on the current score. */
+.cell.live { background: rgba(220, 38, 38, 0.12); }
+.cell.live .pred { color: var(--brand-red); }
+.cell.live .badge {
+  background: var(--brand-red);
+  color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.20);
+}
+.live-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--brand-red);
+  font-weight: 700;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-red);
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+.live-delta {
+  margin-left: 6px;
+  color: var(--brand-red);
+  font-weight: 800;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.live-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 4px 2px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+/* Per-live-match prediction column in the standings table */
+.standings .live-col { text-align: center; white-space: nowrap; }
+.standings th.live-col { color: var(--brand-red); }
+.standings .live-pred .pred {
+  color: var(--brand-red);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Group standings (World Cup groups) --- */
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 12px;
+}
+.group-title {
+  margin: 2px 4px 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--brand-navy);
+}
+.group-table th,
+.group-table td {
+  text-align: center;
+  padding: 5px 4px;
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+}
+.group-table th.name,
+.group-table td.name { text-align: left; }
+.group-table td.name { font-weight: 600; }
+.group-table .pos { width: 1.5rem; color: var(--muted); }
+.group-table .pts { font-weight: 800; }
+.group-table tr.qualify { background: rgba(22, 163, 74, 0.08); }
+.group-table tr.qualify .pos { color: var(--accent); font-weight: 800; }
+:root[data-theme="dark"] .group-table tr.qualify { background: rgba(52, 211, 153, 0.10); }
 :root[data-theme="dark"] .standings tr.leader { background: rgba(251, 191, 36, 0.10); }
 
 /* --- Fixture --- */
@@ -591,3 +732,4 @@ body {
 
   .footer { display: none; }
 }
+
