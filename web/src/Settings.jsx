@@ -91,15 +91,8 @@ export default function Settings({ adminToken }) {
               >
                 <option value="football-data">football-data.org</option>
                 <option value="api-sports">api-football.com (API-Sports)</option>
-                <option value="espn">ESPN (gratis, sin key · goles + tarjetas)</option>
               </select>
             </label>
-            {provider === "espn" && (
-              <p className="muted settings-hint">
-                ESPN no necesita API key. Trae marcadores, goleadores y tarjetas
-                (fuente no oficial; puede fallar sin aviso).
-              </p>
-            )}
 
             <label className="settings-label">
               <span>API key actual</span>

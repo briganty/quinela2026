@@ -122,37 +122,6 @@ async function fetchApiSports(apiKey) {
   }));
 }
 
-// --- provider: ESPN (unofficial, no API key) ----------------------------
-// Free and keyless. League slug defaults to the World Cup ("fifa.world").
-const ESPN_LEAGUE = process.env.FOOTBALL_ESPN_LEAGUE || "fifa.world";
-const ESPN_BASE = `https://site.api.espn.com/apis/site/v2/sports/soccer/${ESPN_LEAGUE}`;
-
-async function fetchEspn() {
-  const res = await fetch(`${ESPN_BASE}/scoreboard`);
-  if (!res.ok) throw new Error(`espn ${res.status}`);
-  const data = await res.json();
-  const toScore = (c) => {
-    const n = parseInt(c?.score, 10);
-    return Number.isNaN(n) ? null : n;
-  };
-  return (data.events || []).map((ev) => {
-    const comp = ev.competitions?.[0] || {};
-    const cs = comp.competitors || [];
-    const home = cs.find((c) => c.homeAway === "home");
-    const away = cs.find((c) => c.homeAway === "away");
-    return {
-      id: String(ev.id),
-      home: home?.team?.displayName || home?.team?.name || null,
-      away: away?.team?.displayName || away?.team?.name || null,
-      homeScore: toScore(home),
-      awayScore: toScore(away),
-      rawStatus: ev.status?.type?.state, // pre | in | post
-      rawStage: null,
-      utcDate: ev.date,
-    };
-  });
-}
-
 function mapStatus(raw) {
   // football-data.org statuses
   if (raw === "FINISHED") return "FINISHED";
@@ -160,16 +129,12 @@ function mapStatus(raw) {
   // api-sports short codes
   if (raw === "FT" || raw === "AET" || raw === "PEN") return "FINISHED";
   if (raw === "1H" || raw === "HT" || raw === "2H" || raw === "ET" || raw === "P" || raw === "LIVE") return "LIVE";
-  // ESPN status states
-  if (raw === "post") return "FINISHED";
-  if (raw === "in") return "LIVE";
   return "SCHEDULED";
 }
 
 const PROVIDERS = {
   "football-data": fetchFootballDataOrg,
   "api-sports": fetchApiSports,
-  espn: fetchEspn,
 };
 
 const STAGE_TO_PHASE = {
@@ -305,59 +270,15 @@ async function fetchApiSportsEvents(apiKey, fixtureId) {
   return out;
 }
 
-// Classify an ESPN key-event into the kinds we surface, or null to skip.
-function espnEventKind(text = "") {
-  if (/red card|second yellow/i.test(text)) return "RED";
-  if (/yellow card/i.test(text)) return "YELLOW";
-  if (/goal/i.test(text) && !/no goal|disallow|missed penalty|penalty missed/i.test(text))
-    return "GOAL";
-  return null;
-}
-
-// All goal + card events keyed by ESPN fixture id, from a single scoreboard
-// call (each event already carries competitions[].details). Keyless.
-async function fetchEspnEventsByFixture() {
-  const res = await fetch(`${ESPN_BASE}/scoreboard`);
-  if (!res.ok) throw new Error(`espn ${res.status}`);
-  const data = await res.json();
-  const byFixture = new Map();
-  for (const ev of data.events || []) {
-    const comp = ev.competitions?.[0] || {};
-    const idToName = new Map(
-      (comp.competitors || []).map((c) => [
-        String(c.team?.id),
-        c.team?.displayName || c.team?.name || null,
-      ])
-    );
-    const out = [];
-    for (const d of comp.details || []) {
-      const kind = espnEventKind(d.type?.text || "");
-      if (!kind) continue;
-      const player = (d.athletesInvolved || [])[0]?.displayName || null;
-      const minRaw = d.clock?.displayValue || "";
-      const minute = parseInt(String(minRaw).replace(/[^0-9]/g, ""), 10);
-      out.push({
-        type: kind,
-        providerEventId: [kind, minRaw, player || "", d.type?.text || ""].join("-"),
-        team: idToName.get(String(d.team?.id)) || null,
-        player,
-        minute: Number.isNaN(minute) ? null : minute,
-      });
-    }
-    byFixture.set(String(ev.id), out);
-  }
-  return byFixture;
-}
-
 // Keep the live event feed in sync: pull goals + cards for in-progress matches
 // and clear a match's events once it is no longer live (so the notifications go
-// away at FT). Scorers/cards come from api-sports or ESPN; football-data's free
-// tier omits them.
+// away at FT). Scorers/cards come from api-sports; football-data's free tier
+// omits them.
 async function syncEvents(providerName, apiKey) {
   db.prepare(
     "DELETE FROM match_events WHERE match_id IN (SELECT id FROM matches WHERE status != 'LIVE')"
   ).run();
-  if (providerName !== "api-sports" && providerName !== "espn")
+  if (providerName !== "api-sports")
     return { liveTracked: 0, eventsAdded: 0 };
 
   const liveMatches = db
@@ -368,16 +289,6 @@ async function syncEvents(providerName, apiKey) {
     .all();
   if (!liveMatches.length) return { liveTracked: 0, eventsAdded: 0 };
 
-  // ESPN gives every fixture's events in one scoreboard call.
-  let espnByFixture = null;
-  if (providerName === "espn") {
-    try {
-      espnByFixture = await fetchEspnEventsByFixture();
-    } catch {
-      return { liveTracked: liveMatches.length, eventsAdded: 0 };
-    }
-  }
-
   const ins = db.prepare(
     `INSERT OR IGNORE INTO match_events
        (match_id, type, provider_event_id, team, player, minute, created_at)
@@ -387,10 +298,7 @@ async function syncEvents(providerName, apiKey) {
   for (const m of liveMatches) {
     let events;
     try {
-      events =
-        providerName === "espn"
-          ? espnByFixture.get(String(m.provider_fixture_id)) || []
-          : await fetchApiSportsEvents(apiKey, m.provider_fixture_id);
+      events = await fetchApiSportsEvents(apiKey, m.provider_fixture_id);
     } catch {
       continue; // a single fixture failing shouldn't break the refresh
     }
@@ -409,13 +317,14 @@ async function syncEvents(providerName, apiKey) {
 // Pull latest results from the configured provider and update matches.
 // Returns a summary; safely no-ops when no API key is configured.
 export async function refreshResults() {
-  const providerName = getSetting(
+  let providerName = getSetting(
     "football_provider",
     process.env.FOOTBALL_PROVIDER || "football-data"
   );
+  // ESPN was removed; fall back to the default for any stored/obsolete value.
+  if (!PROVIDERS[providerName]) providerName = "football-data";
   const apiKey = getSetting("football_api_key", process.env.FOOTBALL_API_KEY);
-  // ESPN is keyless; the other providers need an API key.
-  if (providerName !== "espn" && !apiKey) return { skipped: "no FOOTBALL_API_KEY" };
+  if (!apiKey) return { skipped: "no FOOTBALL_API_KEY" };
   const provider = PROVIDERS[providerName];
   if (!provider) return { error: `unknown provider ${providerName}` };
 

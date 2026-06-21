@@ -88,7 +88,7 @@ router.put("/settings", requireAdmin, (req, res) => {
   }
   if (football_provider !== undefined) {
     const p = String(football_provider);
-    if (!["football-data", "api-sports", "espn"].includes(p))
+    if (!["football-data", "api-sports"].includes(p))
       return res.status(400).json({ error: "unknown provider" });
     setSetting("football_provider", p);
   }
