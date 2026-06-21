@@ -57,11 +57,7 @@ export default function Standings({ poolId }) {
         <tbody>
           {rows.map((r, i) => (
             <tr key={r.player_id} className={i === 0 ? "leader" : ""}>
-              <td>
-                {rows.length > 1 && i === rows.length - 1
-                  ? "💩"
-                  : medal(i) || i + 1}
-              </td>
+              <td>{medal(i) || i + 1}</td>
               <td className="name">{r.name}</td>
               <td className="pts">
                 {r.points}

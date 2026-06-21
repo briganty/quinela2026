@@ -18,7 +18,6 @@ export function listMatches() {
 // Live notifications feed: which match is on now (with its goals so far) and
 // which one is up next. Goals only surface for matches still in progress.
 export function liveFeed() {
-  const now = new Date().toISOString().slice(0, 19);
   const live = db
     .prepare(
       `SELECT id, home_team, away_team, live_home, live_away, kickoff,
@@ -26,20 +25,19 @@ export function liveFeed() {
        FROM matches WHERE status = 'LIVE' ORDER BY kickoff, id`
     )
     .all();
+  // Kickoffs are stored in Costa Rica local time (UTC-6, no DST). Compare
+  // against "now" in that same zone so a match already under way isn't shown
+  // as next; fall back to the earliest scheduled if all remaining have passed.
+  const tzOffsetMin = Number(process.env.TZ_OFFSET_MINUTES ?? -360);
+  const nowLocal = new Date(Date.now() + tzOffsetMin * 60 * 1000)
+    .toISOString()
+    .slice(0, 19);
+  const nextSql = (where) =>
+    `SELECT id, home_team, away_team, kickoff, group_code, phase
+     FROM matches WHERE status = 'SCHEDULED'${where} ORDER BY kickoff, id LIMIT 1`;
   const next =
-    db
-      .prepare(
-        `SELECT id, home_team, away_team, kickoff, group_code, phase
-         FROM matches WHERE status = 'SCHEDULED' AND kickoff >= ?
-         ORDER BY kickoff, id LIMIT 1`
-      )
-      .get(now) ||
-    db
-      .prepare(
-        `SELECT id, home_team, away_team, kickoff, group_code, phase
-         FROM matches WHERE status = 'SCHEDULED' ORDER BY kickoff, id LIMIT 1`
-      )
-      .get();
+    db.prepare(nextSql(" AND kickoff >= ?")).get(nowLocal) ||
+    db.prepare(nextSql("")).get();
   const events = db
     .prepare(
       `SELECT e.match_id, e.type, e.team, e.player, e.minute
