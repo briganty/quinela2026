@@ -11,7 +11,7 @@ services:
       - FOOTBALL_COMPETITION=${FOOTBALL_COMPETITION:-WC}
       - FOOTBALL_API_LEAGUE=${FOOTBALL_API_LEAGUE:-1}
       - FOOTBALL_API_SEASON=${FOOTBALL_API_SEASON:-2026}
-      - POLL_CRON=${POLL_CRON:-*/10 * * * *}
+      - POLL_CRON=${POLL_CRON:-*/5 * * * *}
       # Token opcional para cargar/corregir resultados a mano (PUT /api/matches/:id/result)
       - ADMIN_TOKEN=${ADMIN_TOKEN:-}
       - DB_PATH=/data/quiniela.db
