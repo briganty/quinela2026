@@ -52,7 +52,7 @@ app.listen(PORT, () => console.log(`Quiniela server listening on :${PORT}`));
 
 // Auto-update is always scheduled. refreshResults() short-circuits when no API
 // key is configured (env or admin UI setting), so this is safe.
-const schedule = process.env.POLL_CRON || "*/10 * * * *";
+const schedule = process.env.POLL_CRON || "*/5 * * * *";
 cron.schedule(schedule, async () => {
   const r = await refreshResults();
   console.log("[cron] refreshResults:", JSON.stringify(r));

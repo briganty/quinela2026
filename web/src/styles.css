@@ -170,6 +170,13 @@ body {
 }
 .feed-badge.live { color: var(--brand-red); }
 .feed-badge.next { color: var(--brand-navy); }
+.live-min {
+  font-variant-numeric: tabular-nums;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: var(--brand-red);
+  color: #fff;
+}
 .feed-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .feed-main strong { font-size: 0.95rem; }
 .feed-main em { color: var(--muted); font-style: normal; padding: 0 3px; }

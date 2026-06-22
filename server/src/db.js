@@ -86,6 +86,7 @@ function migrate() {
   // Additive column migrations for databases created before a column existed.
   ensureColumn("matches", "live_home", "INTEGER");
   ensureColumn("matches", "live_away", "INTEGER");
+  ensureColumn("matches", "live_minute", "INTEGER"); // elapsed minute while LIVE
 }
 
 // Add a column to a table if it isn't there yet (SQLite has no IF NOT EXISTS

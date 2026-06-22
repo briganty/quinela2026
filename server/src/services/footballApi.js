@@ -117,6 +117,7 @@ async function fetchApiSports(apiKey) {
     homeScore: m.goals?.home ?? null,
     awayScore: m.goals?.away ?? null,
     rawStatus: m.fixture?.status?.short, // NS, 1H, HT, 2H, ET, P, FT, AET, PEN, ...
+    elapsed: m.fixture?.status?.elapsed ?? null, // live minute (provider clock)
     rawStage: null, // api-sports uses league.round string; not wired yet
     utcDate: m.fixture?.date,
   }));
@@ -173,18 +174,19 @@ function applyKnockouts(fixtures) {
 
   const updateMeta = db.prepare(
     `UPDATE matches SET home_team=?, away_team=?, status=?,
-       live_home=NULL, live_away=NULL,
+       live_home=NULL, live_away=NULL, live_minute=NULL,
        kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
      WHERE id=?`
   );
   const updateLive = db.prepare(
     `UPDATE matches SET home_team=?, away_team=?, live_home=?, live_away=?,
-       status=?, kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
+       live_minute=?, status=?, kickoff=COALESCE(?, kickoff),
+       provider_fixture_id=?, updated_at=?
      WHERE id=?`
   );
   const updateFinal = db.prepare(
     `UPDATE matches SET home_team=?, away_team=?, official_home=?, official_away=?,
-       live_home=NULL, live_away=NULL,
+       live_home=NULL, live_away=NULL, live_minute=NULL,
        status=?, kickoff=COALESCE(?, kickoff), provider_fixture_id=?, updated_at=?
      WHERE id=?`
   );
@@ -216,7 +218,7 @@ function applyKnockouts(fixtures) {
           if (namesChanged) namesUpdated += 1;
         } else if (status === "LIVE" && f.homeScore != null && f.awayScore != null) {
           updateLive.run(
-            home, away, f.homeScore, f.awayScore, status,
+            home, away, f.homeScore, f.awayScore, f.elapsed ?? null, status,
             kickoff, f.id, now, o.id
           );
           if (namesChanged) namesUpdated += 1;
@@ -344,16 +346,16 @@ export async function refreshResults() {
   // show provisional points without polluting the official table.
   const updateFinal = db.prepare(
     `UPDATE matches SET official_home=?, official_away=?,
-       live_home=NULL, live_away=NULL, status=?,
+       live_home=NULL, live_away=NULL, live_minute=NULL, status=?,
        provider_fixture_id=?, updated_at=? WHERE id=?`
   );
   const updateLive = db.prepare(
-    `UPDATE matches SET live_home=?, live_away=?, status=?,
+    `UPDATE matches SET live_home=?, live_away=?, live_minute=?, status=?,
        provider_fixture_id=?, updated_at=? WHERE id=?`
   );
   const updateStatus = db.prepare(
     `UPDATE matches SET status=?, live_home=NULL, live_away=NULL,
-       provider_fixture_id=?, updated_at=? WHERE id=?`
+       live_minute=NULL, provider_fixture_id=?, updated_at=? WHERE id=?`
   );
   let updated = 0;
   let matched = 0;
@@ -375,7 +377,7 @@ export async function refreshResults() {
         updateFinal.run(sh, sa, status, f.id, now, row.id);
         updated += 1;
       } else if (status === "LIVE" && sh != null && sa != null) {
-        updateLive.run(sh, sa, status, f.id, now, row.id);
+        updateLive.run(sh, sa, f.elapsed ?? null, status, f.id, now, row.id);
       } else {
         updateStatus.run(status, f.id, now, row.id);
       }

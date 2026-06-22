@@ -15,6 +15,18 @@ const fmtKick = (iso) => {
 
 const EVENT_ICON = { GOAL: "⚽", YELLOW: "🟨", RED: "🟥" };
 
+// Live match minute. Prefer the provider's exact clock (live_minute, from
+// api-sports' status.elapsed); fall back to an estimate from the kickoff time
+// for providers that don't report it. Capped at "90+".
+const matchMinute = (m) => {
+  if (m.live_minute != null) return m.live_minute > 90 ? "90+" : String(m.live_minute);
+  if (!m.kickoff) return null;
+  const ms = Date.now() - new Date(m.kickoff).getTime();
+  if (ms < 0 || ms > 130 * 60000) return null; // before kickoff or stale
+  const min = Math.floor(ms / 60000);
+  return min > 90 ? "90+" : String(min);
+};
+
 export default function LiveFeed() {
   const [feed, setFeed] = useState({ live: [], next: null, events: [] });
 
@@ -40,6 +52,9 @@ export default function LiveFeed() {
         <div className="feed-card live" key={m.id}>
           <span className="feed-badge live">
             <span className="live-dot" /> EN VIVO
+            {matchMinute(m) != null && (
+              <span className="live-min">{matchMinute(m)}'</span>
+            )}
           </span>
           <div className="feed-main">
             <strong className="feed-score">
