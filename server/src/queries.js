@@ -21,7 +21,7 @@ export function liveFeed() {
   const live = db
     .prepare(
       `SELECT id, home_team, away_team, live_home, live_away, live_minute,
-              kickoff, group_code, phase
+              kickoff, group_code, phase, updated_at
        FROM matches WHERE status = 'LIVE' ORDER BY kickoff, id`
     )
     .all();

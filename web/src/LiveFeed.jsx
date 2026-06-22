@@ -15,11 +15,18 @@ const fmtKick = (iso) => {
 
 const EVENT_ICON = { GOAL: "⚽", YELLOW: "🟨", RED: "🟥" };
 
-// Live match minute. Prefer the provider's exact clock (live_minute, from
-// api-sports' status.elapsed); fall back to an estimate from the kickoff time
-// for providers that don't report it. Capped at "90+".
+// Live match minute. Prefer ESPN's clock (live_minute), interpolated with the
+// time elapsed since the last refresh so it keeps ticking between polls. Falls
+// back to an estimate from the kickoff time. Capped at "90+".
 const matchMinute = (m) => {
-  if (m.live_minute != null) return m.live_minute > 90 ? "90+" : String(m.live_minute);
+  if (m.live_minute != null) {
+    let min = m.live_minute;
+    if (m.updated_at) {
+      const since = Math.floor((Date.now() - new Date(m.updated_at).getTime()) / 60000);
+      if (since > 0 && since < 20) min += since; // bridge the gap between polls
+    }
+    return min > 90 ? "90+" : String(min);
+  }
   if (!m.kickoff) return null;
   const ms = Date.now() - new Date(m.kickoff).getTime();
   if (ms < 0 || ms > 130 * 60000) return null; // before kickoff or stale

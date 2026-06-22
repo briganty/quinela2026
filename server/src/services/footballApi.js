@@ -117,10 +117,76 @@ async function fetchApiSports(apiKey) {
     homeScore: m.goals?.home ?? null,
     awayScore: m.goals?.away ?? null,
     rawStatus: m.fixture?.status?.short, // NS, 1H, HT, 2H, ET, P, FT, AET, PEN, ...
-    elapsed: m.fixture?.status?.elapsed ?? null, // live minute (provider clock)
     rawStage: null, // api-sports uses league.round string; not wired yet
     utcDate: m.fixture?.date,
   }));
+}
+
+// --- companion source: ESPN (keyless) -----------------------------------
+// football-data.org gives the scores; ESPN supplies the live match minute and
+// the goal/card events. One keyless scoreboard call covers every fixture.
+const ESPN_LEAGUE = process.env.FOOTBALL_ESPN_LEAGUE || "fifa.world";
+const ESPN_BASE = `https://site.api.espn.com/apis/site/v2/sports/soccer/${ESPN_LEAGUE}`;
+
+// Classify an ESPN key-event text into the kinds we surface, or null to skip.
+function espnEventKind(text = "") {
+  if (/red card|second yellow/i.test(text)) return "RED";
+  if (/yellow card/i.test(text)) return "YELLOW";
+  if (/goal/i.test(text) && !/no goal|disallow|missed penalty|penalty missed/i.test(text))
+    return "GOAL";
+  return null;
+}
+
+// Live minute + goal/card events from a single scoreboard call, keyed by our
+// Spanish "home|away" team pair so it can be matched to football-data rows.
+async function fetchEspnLive() {
+  const res = await fetch(`${ESPN_BASE}/scoreboard`);
+  if (!res.ok) throw new Error(`espn ${res.status}`);
+  const data = await res.json();
+  const byPair = new Map();
+  for (const ev of data.events || []) {
+    const comp = ev.competitions?.[0] || {};
+    const cs = comp.competitors || [];
+    const homeRaw = cs.find((c) => c.homeAway === "home")?.team;
+    const awayRaw = cs.find((c) => c.homeAway === "away")?.team;
+    const homeEs = resolveTeam(homeRaw?.displayName || homeRaw?.name);
+    const awayEs = resolveTeam(awayRaw?.displayName || awayRaw?.name);
+    if (!homeEs || !awayEs) continue;
+    const teamById = new Map(
+      cs.map((c) => [
+        String(c.team?.id),
+        resolveTeam(c.team?.displayName || c.team?.name) ||
+          c.team?.displayName ||
+          c.team?.name ||
+          null,
+      ])
+    );
+    // displayClock looks like "57'" or "90'+2'"; parseInt stops at the quote,
+    // giving the base minute (90 during stoppage, which we display as "90+").
+    const clock = ev.status?.displayClock || comp.status?.displayClock || "";
+    const minute = parseInt(String(clock), 10);
+    const events = [];
+    for (const d of comp.details || []) {
+      const kind = espnEventKind(d.type?.text || "");
+      if (!kind) continue;
+      const player = (d.athletesInvolved || [])[0]?.displayName || null;
+      const evClock = d.clock?.displayValue || "";
+      const evMin = parseInt(String(evClock), 10);
+      events.push({
+        type: kind,
+        providerEventId: [kind, evClock, player || "", d.type?.text || ""].join("-"),
+        team: teamById.get(String(d.team?.id)) || null,
+        player,
+        minute: Number.isNaN(evMin) ? null : evMin,
+      });
+    }
+    byPair.set(`${homeEs}|${awayEs}`, {
+      minute: Number.isNaN(minute) ? null : minute,
+      state: ev.status?.type?.state, // pre | in | post
+      events,
+    });
+  }
+  return byPair;
 }
 
 function mapStatus(raw) {
@@ -151,7 +217,7 @@ const KO_PHASES = Object.values(STAGE_TO_PHASE);
 // Match knockout fixtures to our placeholder rows by (phase, chronological order).
 // The API reveals team names as teams qualify — we overwrite our placeholders,
 // and once status=FINISHED the scores are written too. Returns counts.
-function applyKnockouts(fixtures) {
+function applyKnockouts(fixtures, espnMinute = () => null) {
   const apiByPhase = {};
   for (const f of fixtures) {
     const phase = STAGE_TO_PHASE[f.rawStage];
@@ -217,8 +283,9 @@ function applyKnockouts(fixtures) {
           scoresUpdated += 1;
           if (namesChanged) namesUpdated += 1;
         } else if (status === "LIVE" && f.homeScore != null && f.awayScore != null) {
+          const minute = espnMinute(resolveTeam(home) || home, resolveTeam(away) || away);
           updateLive.run(
-            home, away, f.homeScore, f.awayScore, f.elapsed ?? null, status,
+            home, away, f.homeScore, f.awayScore, minute, status,
             kickoff, f.id, now, o.id
           );
           if (namesChanged) namesUpdated += 1;
@@ -233,61 +300,16 @@ function applyKnockouts(fixtures) {
   return { matched, namesUpdated, scoresUpdated };
 }
 
-// Classify an api-sports event into the kinds we surface, or null to skip.
-function eventKind(e) {
-  const detail = e.detail || "";
-  if (e.type === "Goal") return detail === "Missed Penalty" ? null : "GOAL";
-  if (e.type === "Card") {
-    if (/red/i.test(detail) || /second yellow/i.test(detail)) return "RED";
-    if (/yellow/i.test(detail)) return "YELLOW";
-  }
-  return null;
-}
-
-// Goal + card events for one fixture (api-sports): team, player, minute, type.
-async function fetchApiSportsEvents(apiKey, fixtureId) {
-  const url = `https://v3.football.api-sports.io/fixtures/events?fixture=${fixtureId}`;
-  const res = await fetch(url, { headers: { "x-apisports-key": apiKey } });
-  if (!res.ok) throw new Error(`api-sports events ${res.status}`);
-  const data = await res.json();
-  const out = [];
-  for (const e of data.response || []) {
-    const kind = eventKind(e);
-    if (!kind) continue;
-    out.push({
-      type: kind,
-      // Stable id within a fixture so re-polling doesn't duplicate an event.
-      providerEventId: [
-        kind,
-        e.time?.elapsed ?? "",
-        e.time?.extra ?? "",
-        e.player?.id ?? e.player?.name ?? "",
-        e.detail ?? "",
-      ].join("-"),
-      team: e.team?.name || null,
-      player: e.player?.name || null,
-      minute: e.time?.elapsed ?? null,
-    });
-  }
-  return out;
-}
-
-// Keep the live event feed in sync: pull goals + cards for in-progress matches
-// and clear a match's events once it is no longer live (so the notifications go
-// away at FT). Scorers/cards come from api-sports; football-data's free tier
-// omits them.
-async function syncEvents(providerName, apiKey) {
+// Keep the live event feed in sync from ESPN: insert goals + cards for matches
+// that are LIVE and clear a match's events once it is no longer live (so the
+// notifications go away at FT). Matched to our rows by Spanish team pair.
+function syncEventsFromEspn(espn) {
   db.prepare(
     "DELETE FROM match_events WHERE match_id IN (SELECT id FROM matches WHERE status != 'LIVE')"
   ).run();
-  if (providerName !== "api-sports")
-    return { liveTracked: 0, eventsAdded: 0 };
 
   const liveMatches = db
-    .prepare(
-      `SELECT id, provider_fixture_id FROM matches
-       WHERE status = 'LIVE' AND provider_fixture_id IS NOT NULL`
-    )
+    .prepare("SELECT id, home_team, away_team FROM matches WHERE status = 'LIVE'")
     .all();
   if (!liveMatches.length) return { liveTracked: 0, eventsAdded: 0 };
 
@@ -298,14 +320,12 @@ async function syncEvents(providerName, apiKey) {
   );
   let eventsAdded = 0;
   for (const m of liveMatches) {
-    let events;
-    try {
-      events = await fetchApiSportsEvents(apiKey, m.provider_fixture_id);
-    } catch {
-      continue; // a single fixture failing shouldn't break the refresh
-    }
+    const entry =
+      espn.get(`${m.home_team}|${m.away_team}`) ||
+      espn.get(`${m.away_team}|${m.home_team}`);
+    if (!entry) continue;
     const now = new Date().toISOString();
-    for (const e of events) {
+    for (const e of entry.events) {
       const team = resolveTeam(e.team) || e.team;
       const info = ins.run(
         m.id, e.type, e.providerEventId, team, e.player, e.minute, now
@@ -316,26 +336,35 @@ async function syncEvents(providerName, apiKey) {
   return { liveTracked: liveMatches.length, eventsAdded };
 }
 
-// Pull latest results from the configured provider and update matches.
-// Returns a summary; safely no-ops when no API key is configured.
+// Pull latest results and update matches. Scores come from the configured
+// provider (football-data.org by default); the live minute and goal/card
+// events come from ESPN. Both are fetched in parallel. Safely no-ops with no key.
 export async function refreshResults() {
   let providerName = getSetting(
     "football_provider",
     process.env.FOOTBALL_PROVIDER || "football-data"
   );
-  // ESPN was removed; fall back to the default for any stored/obsolete value.
   if (!PROVIDERS[providerName]) providerName = "football-data";
   const apiKey = getSetting("football_api_key", process.env.FOOTBALL_API_KEY);
   if (!apiKey) return { skipped: "no FOOTBALL_API_KEY" };
   const provider = PROVIDERS[providerName];
-  if (!provider) return { error: `unknown provider ${providerName}` };
 
-  let fixtures;
-  try {
-    fixtures = await provider(apiKey);
-  } catch (e) {
-    return { error: e.message };
-  }
+  // Two simultaneous requests: scores from the provider, minute + events from
+  // ESPN. ESPN failing must not block the scores update.
+  const [scoresR, espnR] = await Promise.allSettled([
+    provider(apiKey),
+    fetchEspnLive(),
+  ]);
+  if (scoresR.status !== "fulfilled")
+    return { error: scoresR.reason?.message || "scores fetch failed" };
+  const fixtures = scoresR.value;
+  const espn = espnR.status === "fulfilled" ? espnR.value : new Map();
+  const espnError = espnR.status === "rejected"
+    ? espnR.reason?.message || "espn failed"
+    : null;
+  // Live minute for a match (resolved Spanish names), either orientation.
+  const espnMinute = (home, away) =>
+    (espn.get(`${home}|${away}`) || espn.get(`${away}|${home}`))?.minute ?? null;
 
   const select = db.prepare(
     "SELECT id, home_team, away_team FROM matches WHERE home_team=? AND away_team=?"
@@ -377,21 +406,23 @@ export async function refreshResults() {
         updateFinal.run(sh, sa, status, f.id, now, row.id);
         updated += 1;
       } else if (status === "LIVE" && sh != null && sa != null) {
-        updateLive.run(sh, sa, f.elapsed ?? null, status, f.id, now, row.id);
+        updateLive.run(sh, sa, espnMinute(home, away), status, f.id, now, row.id);
       } else {
         updateStatus.run(status, f.id, now, row.id);
       }
     }
   });
   tx(fixtures);
-  const ko = applyKnockouts(fixtures);
-  const events = await syncEvents(providerName, apiKey);
+  const ko = applyKnockouts(fixtures, espnMinute);
+  const events = syncEventsFromEspn(espn);
   return {
-    provider: providerName,
+    scoresFrom: providerName,
+    eventsFrom: "espn",
     fixtures: fixtures.length,
     matched,
     updated,
     ko,
     events,
+    espnError,
   };
 }
