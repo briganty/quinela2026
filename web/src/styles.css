@@ -188,8 +188,9 @@ body {
   margin: 4px 0 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 6px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 .feed-goals li {
   display: inline-flex;
@@ -689,6 +690,8 @@ body {
      being pushed right by the badge column. */
   .feed-card { flex-direction: column; align-items: stretch; gap: 6px; }
   .feed-badge { padding-top: 0; }
+  /* On phones, flow goal/card chips so several fit per line. */
+  .feed-goals { flex-direction: row; flex-wrap: wrap; gap: 4px 6px; }
 
   .tabs.views { display: none; }
   .tabs.pools { margin: 10px 0 12px; }
