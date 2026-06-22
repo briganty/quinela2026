@@ -185,26 +185,36 @@ body {
 .feed-when { color: var(--muted); font-size: 0.78rem; }
 .feed-goals {
   list-style: none;
-  margin: 2px 0 0;
+  margin: 4px 0 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-wrap: wrap;
+  gap: 4px 6px;
 }
 .feed-goals li {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.82rem;
+  gap: 4px;
+  font-size: 0.8rem;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  max-width: 100%;
 }
-.goal-icon { font-size: 0.8rem; }
+.goal-icon { font-size: 0.78rem; flex: none; }
 .goal-min {
-  min-width: 1.9rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+  flex: none;
 }
 .goal-team { font-weight: 700; }
-.goal-player { color: var(--muted); }
+.goal-player {
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .announcements {
   display: flex;
@@ -674,6 +684,11 @@ body {
   .app { padding-bottom: calc(80px + var(--safe-bottom)); }
   .logo { max-width: 240px; width: 70%; }
   .subtitle { font-size: 0.78rem; }
+
+  /* Stack the live card so the score + goals use the full width instead of
+     being pushed right by the badge column. */
+  .feed-card { flex-direction: column; align-items: stretch; gap: 6px; }
+  .feed-badge { padding-top: 0; }
 
   .tabs.views { display: none; }
   .tabs.pools { margin: 10px 0 12px; }
