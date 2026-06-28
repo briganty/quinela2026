@@ -532,7 +532,7 @@
     },
     {
       "match_no": 29,
-      "kickoff": "2026-06-19T13:00:00",
+      "kickoff": "2026-06-18T22:00:00",
       "stadium": "Estadio Seattle",
       "group_code": "D",
       "phase": "GROUP",
@@ -544,7 +544,7 @@
     },
     {
       "match_no": 30,
-      "kickoff": "2026-06-19T16:00:00",
+      "kickoff": "2026-06-19T13:00:00",
       "stadium": "Estadio Boston",
       "group_code": "C",
       "phase": "GROUP",
@@ -556,7 +556,7 @@
     },
     {
       "match_no": 31,
-      "kickoff": "2026-06-19T18:30:00",
+      "kickoff": "2026-06-19T16:00:00",
       "stadium": "Estadio Filadelfia",
       "group_code": "C",
       "phase": "GROUP",
@@ -568,7 +568,7 @@
     },
     {
       "match_no": 32,
-      "kickoff": "2026-06-19T21:00:00",
+      "kickoff": "2026-06-19T18:30:00",
       "stadium": "Estadio Bahía de San Francisco",
       "group_code": "D",
       "phase": "GROUP",
@@ -796,7 +796,7 @@
     },
     {
       "match_no": 51,
-      "kickoff": "2026-06-24T18:00:00",
+      "kickoff": "2026-06-24T16:00:00",
       "stadium": "Estadio Miami",
       "group_code": "C",
       "phase": "GROUP",
@@ -1060,7 +1060,7 @@
     },
     {
       "match_no": 73,
-      "kickoff": "2026-06-28T19:00:00",
+      "kickoff": "2026-06-28T13:00:00",
       "stadium": "Los Ángeles",
       "group_code": null,
       "phase": "R32",
@@ -1072,7 +1072,7 @@
     },
     {
       "match_no": 74,
-      "kickoff": "2026-06-29T19:00:00",
+      "kickoff": "2026-06-29T14:30:00",
       "stadium": "Boston",
       "group_code": null,
       "phase": "R32",
@@ -1096,7 +1096,7 @@
     },
     {
       "match_no": 76,
-      "kickoff": "2026-06-29T19:00:00",
+      "kickoff": "2026-06-29T11:00:00",
       "stadium": "Houston",
       "group_code": null,
       "phase": "R32",
@@ -1108,7 +1108,7 @@
     },
     {
       "match_no": 77,
-      "kickoff": "2026-06-30T19:00:00",
+      "kickoff": "2026-06-30T15:00:00",
       "stadium": "Nueva York/NJ",
       "group_code": null,
       "phase": "R32",
@@ -1120,7 +1120,7 @@
     },
     {
       "match_no": 78,
-      "kickoff": "2026-06-30T19:00:00",
+      "kickoff": "2026-06-30T11:00:00",
       "stadium": "Dallas",
       "group_code": null,
       "phase": "R32",
@@ -1144,7 +1144,7 @@
     },
     {
       "match_no": 80,
-      "kickoff": "2026-07-01T19:00:00",
+      "kickoff": "2026-07-01T10:00:00",
       "stadium": "Atlanta",
       "group_code": null,
       "phase": "R32",
@@ -1156,7 +1156,7 @@
     },
     {
       "match_no": 81,
-      "kickoff": "2026-07-01T19:00:00",
+      "kickoff": "2026-07-01T18:00:00",
       "stadium": "San Francisco Bay",
       "group_code": null,
       "phase": "R32",
@@ -1168,7 +1168,7 @@
     },
     {
       "match_no": 82,
-      "kickoff": "2026-07-01T19:00:00",
+      "kickoff": "2026-07-01T14:00:00",
       "stadium": "Seattle",
       "group_code": null,
       "phase": "R32",
@@ -1180,7 +1180,7 @@
     },
     {
       "match_no": 83,
-      "kickoff": "2026-07-02T19:00:00",
+      "kickoff": "2026-07-02T17:00:00",
       "stadium": "Toronto",
       "group_code": null,
       "phase": "R32",
@@ -1192,7 +1192,7 @@
     },
     {
       "match_no": 84,
-      "kickoff": "2026-07-02T19:00:00",
+      "kickoff": "2026-07-02T13:00:00",
       "stadium": "Los Ángeles",
       "group_code": null,
       "phase": "R32",
@@ -1204,7 +1204,7 @@
     },
     {
       "match_no": 85,
-      "kickoff": "2026-07-02T19:00:00",
+      "kickoff": "2026-07-02T21:00:00",
       "stadium": "Vancouver",
       "group_code": null,
       "phase": "R32",
@@ -1216,7 +1216,7 @@
     },
     {
       "match_no": 86,
-      "kickoff": "2026-07-03T19:00:00",
+      "kickoff": "2026-07-03T16:00:00",
       "stadium": "Miami",
       "group_code": null,
       "phase": "R32",
@@ -1228,7 +1228,7 @@
     },
     {
       "match_no": 87,
-      "kickoff": "2026-07-03T19:00:00",
+      "kickoff": "2026-07-03T19:30:00",
       "stadium": "Kansas City",
       "group_code": null,
       "phase": "R32",
@@ -1240,7 +1240,7 @@
     },
     {
       "match_no": 88,
-      "kickoff": "2026-07-03T19:00:00",
+      "kickoff": "2026-07-03T12:00:00",
       "stadium": "Dallas",
       "group_code": null,
       "phase": "R32",
@@ -1252,7 +1252,7 @@
     },
     {
       "match_no": 89,
-      "kickoff": "2026-07-04T19:00:00",
+      "kickoff": "2026-07-04T15:00:00",
       "stadium": "Filadelfia",
       "group_code": null,
       "phase": "R16",
@@ -1264,8 +1264,8 @@
     },
     {
       "match_no": 90,
-      "kickoff": "2026-07-04T19:00:00",
-      "stadium": "Boston",
+      "kickoff": "2026-07-04T11:00:00",
+      "stadium": "Houston",
       "group_code": null,
       "phase": "R16",
       "home_team": "Ganador 75",
@@ -1276,8 +1276,8 @@
     },
     {
       "match_no": 91,
-      "kickoff": "2026-07-05T19:00:00",
-      "stadium": "Dallas",
+      "kickoff": "2026-07-05T14:00:00",
+      "stadium": "Nueva York/NJ",
       "group_code": null,
       "phase": "R16",
       "home_team": "Ganador 77",
@@ -1288,8 +1288,8 @@
     },
     {
       "match_no": 92,
-      "kickoff": "2026-07-05T19:00:00",
-      "stadium": "Atlanta",
+      "kickoff": "2026-07-05T18:00:00",
+      "stadium": "Ciudad de México",
       "group_code": null,
       "phase": "R16",
       "home_team": "Ganador 79",
@@ -1300,8 +1300,8 @@
     },
     {
       "match_no": 93,
-      "kickoff": "2026-07-06T19:00:00",
-      "stadium": "Los Ángeles",
+      "kickoff": "2026-07-06T13:00:00",
+      "stadium": "Dallas",
       "group_code": null,
       "phase": "R16",
       "home_team": "Ganador 81",
@@ -1312,8 +1312,8 @@
     },
     {
       "match_no": 94,
-      "kickoff": "2026-07-06T19:00:00",
-      "stadium": "Miami",
+      "kickoff": "2026-07-06T18:00:00",
+      "stadium": "Seattle",
       "group_code": null,
       "phase": "R16",
       "home_team": "Ganador 83",
@@ -1324,8 +1324,8 @@
     },
     {
       "match_no": 95,
-      "kickoff": "2026-07-07T19:00:00",
-      "stadium": "Nueva York/NJ",
+      "kickoff": "2026-07-07T10:00:00",
+      "stadium": "Atlanta",
       "group_code": null,
       "phase": "R16",
       "home_team": "Ganador 85",
@@ -1336,7 +1336,7 @@
     },
     {
       "match_no": 96,
-      "kickoff": "2026-07-07T19:00:00",
+      "kickoff": "2026-07-07T14:00:00",
       "stadium": "Vancouver",
       "group_code": null,
       "phase": "R16",
@@ -1348,7 +1348,7 @@
     },
     {
       "match_no": 97,
-      "kickoff": "2026-07-09T19:00:00",
+      "kickoff": "2026-07-09T14:00:00",
       "stadium": "Boston",
       "group_code": null,
       "phase": "QF",
@@ -1360,7 +1360,7 @@
     },
     {
       "match_no": 98,
-      "kickoff": "2026-07-09T19:00:00",
+      "kickoff": "2026-07-10T13:00:00",
       "stadium": "Los Ángeles",
       "group_code": null,
       "phase": "QF",
@@ -1372,7 +1372,7 @@
     },
     {
       "match_no": 99,
-      "kickoff": "2026-07-10T19:00:00",
+      "kickoff": "2026-07-11T15:00:00",
       "stadium": "Miami",
       "group_code": null,
       "phase": "QF",
@@ -1384,7 +1384,7 @@
     },
     {
       "match_no": 100,
-      "kickoff": "2026-07-10T19:00:00",
+      "kickoff": "2026-07-11T19:00:00",
       "stadium": "Kansas City",
       "group_code": null,
       "phase": "QF",
@@ -1396,7 +1396,7 @@
     },
     {
       "match_no": 101,
-      "kickoff": "2026-07-14T19:00:00",
+      "kickoff": "2026-07-14T13:00:00",
       "stadium": "Dallas",
       "group_code": null,
       "phase": "SF",
@@ -1408,7 +1408,7 @@
     },
     {
       "match_no": 102,
-      "kickoff": "2026-07-15T19:00:00",
+      "kickoff": "2026-07-15T13:00:00",
       "stadium": "Atlanta",
       "group_code": null,
       "phase": "SF",
@@ -1420,7 +1420,7 @@
     },
     {
       "match_no": 103,
-      "kickoff": "2026-07-18T19:00:00",
+      "kickoff": "2026-07-18T15:00:00",
       "stadium": "Miami",
       "group_code": null,
       "phase": "3RD",
@@ -1432,7 +1432,7 @@
     },
     {
       "match_no": 104,
-      "kickoff": "2026-07-19T16:00:00",
+      "kickoff": "2026-07-19T13:00:00",
       "stadium": "Nueva York/NJ",
       "group_code": null,
       "phase": "FINAL",
