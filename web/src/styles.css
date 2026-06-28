@@ -682,7 +682,8 @@ body {
 .bottom-nav { display: none; }
 
 @media (max-width: 720px) {
-  .app { padding-bottom: calc(80px + var(--safe-bottom)); }
+  .app { padding-bottom: calc(104px + var(--safe-bottom)); }
+  .content { margin-bottom: 16px; }
   .logo { max-width: 240px; width: 70%; }
   .subtitle { font-size: 0.78rem; }
 
