@@ -24,6 +24,19 @@ export async function savePrediction(token, { pool_match_id, player_id, pred_hom
   return r.json();
 }
 
+// Set/clear a match's official result (canonical orientation). `home`/`away`
+// null clears it back to SCHEDULED. Lets the admin fill in knockout-round scores
+// by hand when the data provider hasn't.
+export async function setMatchResult(token, matchId, { home, away, status }) {
+  const r = await fetch(`/api/matches/${matchId}/result`, {
+    method: "PUT",
+    headers: { "content-type": "application/json", "x-admin-token": token },
+    body: JSON.stringify({ home, away, status }),
+  });
+  if (!r.ok) throw new Error((await r.json()).error || "save failed");
+  return r.json();
+}
+
 export const getAnnouncements = () => j("/api/announcements");
 
 export async function postAnnouncement(token, message) {

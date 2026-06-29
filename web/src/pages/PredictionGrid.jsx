@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getGrid, savePrediction } from "../api.js";
+import { getGrid, savePrediction, setMatchResult } from "../api.js";
 
 const ptsClass = (p, live) => {
   const base =
@@ -58,9 +58,63 @@ function EditCell({ initial, onSave, onCancel }) {
   );
 }
 
+// Inline editor for a match's official result. Inputs are in the row's (pool)
+// orientation; the parent converts to canonical before saving. Empty = clear.
+function OfficialEditor({ initial, onSave, onCancel }) {
+  const [h, setH] = useState(initial?.home ?? "");
+  const [a, setA] = useState(initial?.away ?? "");
+  const [busy, setBusy] = useState(false);
+  const hRef = useRef(null);
+
+  useEffect(() => {
+    hRef.current?.focus();
+    hRef.current?.select();
+  }, []);
+
+  const submit = async (e) => {
+    e?.preventDefault?.();
+    setBusy(true);
+    try {
+      await onSave({
+        home: h === "" ? null : Number(h),
+        away: a === "" ? null : Number(a),
+      });
+    } catch (err) {
+      alert("Error: " + err.message);
+      setBusy(false);
+    }
+  };
+
+  return (
+    <form className="cell-editor" onSubmit={submit}>
+      <input
+        ref={hRef}
+        type="number"
+        min="0"
+        max="20"
+        value={h}
+        onChange={(e) => setH(e.target.value)}
+        onKeyDown={(e) => e.key === "Escape" && onCancel()}
+      />
+      <span>-</span>
+      <input
+        type="number"
+        min="0"
+        max="20"
+        value={a}
+        onChange={(e) => setA(e.target.value)}
+        onKeyDown={(e) => e.key === "Escape" && onCancel()}
+      />
+      <button type="submit" disabled={busy} title="Guardar marcador">✓</button>
+      <button type="button" onClick={onCancel} title="Cancelar">✕</button>
+    </form>
+  );
+}
+
 export default function PredictionGrid({ poolId, adminToken }) {
   const [data, setData] = useState(null);
   const [editing, setEditing] = useState(null); // `${pmId}#${plId}`
+  const [editingOff, setEditingOff] = useState(null); // pool_match_id
 
   const load = () => getGrid(poolId).then(setData);
 
@@ -87,6 +141,17 @@ export default function PredictionGrid({ poolId, adminToken }) {
     await load();
   };
 
+  // Save the official result. `home`/`away` are in the row's (pool) orientation;
+  // flip to canonical when the pool match is reversed before writing the match.
+  const saveOfficial = async (row, { home, away }) => {
+    const canon = row.reversed
+      ? { home: away, away: home }
+      : { home, away };
+    await setMatchResult(adminToken, row.match_id, canon);
+    setEditingOff(null);
+    await load();
+  };
+
   return (
     <div className="card scroll">
       <table className="table grid">
@@ -107,20 +172,37 @@ export default function PredictionGrid({ poolId, adminToken }) {
                   {row.home_team} <em>vs</em> {row.away_team}
                 </span>
               </td>
-              <td className="official">
-                {row.official ? (
-                  `${row.official.home}-${row.official.away}`
-                ) : row.live ? (
-                  <span className="live-score">
-                    {row.live.home}-{row.live.away}
-                    <span className="live-dot" aria-label="en vivo" /> EN VIVO
-                  </span>
-                ) : row.status === "LIVE" ? (
-                  "EN VIVO"
-                ) : (
-                  "—"
-                )}
-              </td>
+              {(() => {
+                const editableOff = !!adminToken && row.match_id != null;
+                const isEditingOff = editingOff === row.pool_match_id;
+                return (
+                  <td
+                    className={"official" + (editableOff ? " editable" : "")}
+                    onClick={() =>
+                      editableOff && !isEditingOff && setEditingOff(row.pool_match_id)
+                    }
+                  >
+                    {isEditingOff ? (
+                      <OfficialEditor
+                        initial={row.official}
+                        onSave={(p) => saveOfficial(row, p)}
+                        onCancel={() => setEditingOff(null)}
+                      />
+                    ) : row.official ? (
+                      `${row.official.home}-${row.official.away}`
+                    ) : row.live ? (
+                      <span className="live-score">
+                        {row.live.home}-{row.live.away}
+                        <span className="live-dot" aria-label="en vivo" /> EN VIVO
+                      </span>
+                    ) : row.status === "LIVE" ? (
+                      "EN VIVO"
+                    ) : (
+                      editableOff ? "+" : "—"
+                    )}
+                  </td>
+                );
+              })()}
               {row.cells.map((c) => {
                 const key = `${row.pool_match_id}#${c.player_id}`;
                 const isEditing = editing === key;

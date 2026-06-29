@@ -261,6 +261,8 @@ export function grid(poolId) {
     });
     return {
       pool_match_id: pm.id,
+      match_id: pm.match_id,
+      reversed: !!pm.reversed,
       position: pm.position,
       kickoff: pm.kickoff,
       status: pm.status || "SCHEDULED",
