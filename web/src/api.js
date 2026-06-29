@@ -37,6 +37,18 @@ export async function setMatchResult(token, matchId, { home, away, status }) {
   return r.json();
 }
 
+// Set a match's team names (canonical orientation). Lets the admin fill in
+// knockout teams as they qualify. Blank values leave that side unchanged.
+export async function setMatchTeams(token, matchId, { home, away }) {
+  const r = await fetch(`/api/matches/${matchId}/teams`, {
+    method: "PUT",
+    headers: { "content-type": "application/json", "x-admin-token": token },
+    body: JSON.stringify({ home, away }),
+  });
+  if (!r.ok) throw new Error((await r.json()).error || "save failed");
+  return r.json();
+}
+
 export const getAnnouncements = () => j("/api/announcements");
 
 export async function postAnnouncement(token, message) {

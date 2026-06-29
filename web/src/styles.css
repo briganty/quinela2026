@@ -691,6 +691,45 @@ body {
   border-color: var(--accent);
 }
 
+/* --- Editable knockout team names --- */
+.grid .teams-label.editable { cursor: pointer; border-radius: 6px; }
+.grid .teams-label.editable:hover {
+  outline: 1px dashed var(--accent-2);
+  outline-offset: 2px;
+}
+.teams-editor {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.teams-editor input {
+  width: 84px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--accent-2);
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  outline: none;
+}
+.teams-editor em { color: var(--muted); font-style: normal; }
+.teams-editor button {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+.teams-editor button[type="submit"] {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
 /* --- Mobile bottom nav bar (shown ≤ 720px) --- */
 .bottom-nav { display: none; }
 

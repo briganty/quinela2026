@@ -123,6 +123,7 @@ function poolRows(poolId) {
     .prepare(
       `SELECT pm.id, pm.position, pm.home_team, pm.away_team, pm.reversed,
               m.id AS match_id, m.kickoff, m.status, m.phase,
+              m.home_team AS m_home, m.away_team AS m_away,
               m.official_home, m.official_away, m.live_home, m.live_away
        FROM pool_matches pm
        LEFT JOIN matches m ON m.id = pm.match_id
@@ -224,6 +225,17 @@ export function standings(poolId) {
 }
 
 // Grid: matches (rows) x players (columns) with each prediction and its points.
+// Canonical team name for a knockout pool match, honoring orientation. Returns
+// null for group matches or when the match has no name yet, so the caller falls
+// back to the pool_matches placeholder.
+function koName(pm, side) {
+  if (!pm.phase || pm.phase === "GROUP") return null;
+  if (pm.m_home == null && pm.m_away == null) return null;
+  const home = pm.reversed ? pm.m_away : pm.m_home;
+  const away = pm.reversed ? pm.m_home : pm.m_away;
+  return side === "home" ? home : away;
+}
+
 export function grid(poolId) {
   const players = poolPlayers(poolId);
   const { pms, predsByPm } = poolRows(poolId);
@@ -267,8 +279,10 @@ export function grid(poolId) {
       position: pm.position,
       kickoff: pm.kickoff,
       status: pm.status || "SCHEDULED",
-      home_team: pm.home_team,
-      away_team: pm.away_team,
+      // For knockouts the teams qualify over time, so show the canonical match's
+      // current names (honoring orientation) instead of the frozen placeholder.
+      home_team: koName(pm, "home") ?? pm.home_team,
+      away_team: koName(pm, "away") ?? pm.away_team,
       official:
         finalOff.home == null ? null : { home: finalOff.home, away: finalOff.away },
       live: isLive ? { home: liveOff.home, away: liveOff.away } : null,

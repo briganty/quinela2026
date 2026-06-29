@@ -36,4 +36,34 @@ router.put("/:id/result", (req, res) => {
   res.json({ ok: true });
 });
 
+// Admin: set a match's team names by hand (e.g. fill knockout teams as they
+// qualify when the data provider doesn't). Body: { home, away } in canonical
+// orientation. Empty/blank values leave that side unchanged.
+router.put("/:id/teams", (req, res) => {
+  const token = process.env.ADMIN_TOKEN;
+  if (!token) return res.status(403).json({ error: "admin disabled" });
+  if (req.get("x-admin-token") !== token)
+    return res.status(401).json({ error: "unauthorized" });
+
+  const norm = (v) => (typeof v === "string" && v.trim() ? v.trim() : null);
+  const home = norm(req.body?.home);
+  const away = norm(req.body?.away);
+  if (!home && !away) return res.status(400).json({ error: "no names" });
+
+  const cur = db
+    .prepare("SELECT home_team, away_team FROM matches WHERE id=?")
+    .get(Number(req.params.id));
+  if (!cur) return res.status(404).json({ error: "not found" });
+
+  db.prepare(
+    "UPDATE matches SET home_team=?, away_team=?, updated_at=? WHERE id=?"
+  ).run(
+    home || cur.home_team,
+    away || cur.away_team,
+    new Date().toISOString(),
+    Number(req.params.id)
+  );
+  res.json({ ok: true });
+});
+
 export default router;

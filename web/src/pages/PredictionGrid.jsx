@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getGrid, savePrediction, setMatchResult } from "../api.js";
+import { getGrid, savePrediction, setMatchResult, setMatchTeams } from "../api.js";
 
 const PHASE_LABEL = {
   R32: "16vos",
@@ -120,10 +120,59 @@ function OfficialEditor({ initial, onSave, onCancel }) {
   );
 }
 
+// Inline editor for a knockout match's team names (pool orientation). The
+// parent converts to canonical before saving.
+function TeamsEditor({ home, away, onSave, onCancel }) {
+  const [h, setH] = useState(home ?? "");
+  const [a, setA] = useState(away ?? "");
+  const [busy, setBusy] = useState(false);
+  const hRef = useRef(null);
+
+  useEffect(() => {
+    hRef.current?.focus();
+    hRef.current?.select();
+  }, []);
+
+  const submit = async (e) => {
+    e?.preventDefault?.();
+    setBusy(true);
+    try {
+      await onSave({ home: h.trim(), away: a.trim() });
+    } catch (err) {
+      alert("Error: " + err.message);
+      setBusy(false);
+    }
+  };
+
+  return (
+    <form className="teams-editor" onSubmit={submit}>
+      <input
+        ref={hRef}
+        type="text"
+        placeholder="Local"
+        value={h}
+        onChange={(e) => setH(e.target.value)}
+        onKeyDown={(e) => e.key === "Escape" && onCancel()}
+      />
+      <em>vs</em>
+      <input
+        type="text"
+        placeholder="Visitante"
+        value={a}
+        onChange={(e) => setA(e.target.value)}
+        onKeyDown={(e) => e.key === "Escape" && onCancel()}
+      />
+      <button type="submit" disabled={busy} title="Guardar equipos">✓</button>
+      <button type="button" onClick={onCancel} title="Cancelar">✕</button>
+    </form>
+  );
+}
+
 export default function PredictionGrid({ poolId, adminToken }) {
   const [data, setData] = useState(null);
   const [editing, setEditing] = useState(null); // `${pmId}#${plId}`
   const [editingOff, setEditingOff] = useState(null); // pool_match_id
+  const [editingTeams, setEditingTeams] = useState(null); // pool_match_id
 
   const load = () => getGrid(poolId).then(setData);
 
@@ -161,6 +210,17 @@ export default function PredictionGrid({ poolId, adminToken }) {
     await load();
   };
 
+  // Save knockout team names. Inputs are in the row's (pool) orientation; flip
+  // to canonical when the pool match is reversed before writing the match.
+  const saveTeams = async (row, { home, away }) => {
+    const canon = row.reversed
+      ? { home: away, away: home }
+      : { home, away };
+    await setMatchTeams(adminToken, row.match_id, canon);
+    setEditingTeams(null);
+    await load();
+  };
+
   return (
     <div className="card scroll">
       <table className="table grid">
@@ -176,14 +236,38 @@ export default function PredictionGrid({ poolId, adminToken }) {
         <tbody>
           {rows.map((row) => (
             <tr key={row.pool_match_id}>
-              <td className="sticky-col match">
-                {row.phase && row.phase !== "GROUP" && (
-                  <span className="phase-tag">{PHASE_LABEL[row.phase] || row.phase}</span>
-                )}
-                <span>
-                  {row.home_team} <em>vs</em> {row.away_team}
-                </span>
-              </td>
+              {(() => {
+                const isKO = row.phase && row.phase !== "GROUP";
+                const editableTeams = isKO && !!adminToken && row.match_id != null;
+                const isEditingTeams = editingTeams === row.pool_match_id;
+                return (
+                  <td className="sticky-col match">
+                    {isKO && (
+                      <span className="phase-tag">
+                        {PHASE_LABEL[row.phase] || row.phase}
+                      </span>
+                    )}
+                    {isEditingTeams ? (
+                      <TeamsEditor
+                        home={row.home_team}
+                        away={row.away_team}
+                        onSave={(t) => saveTeams(row, t)}
+                        onCancel={() => setEditingTeams(null)}
+                      />
+                    ) : (
+                      <span
+                        className={editableTeams ? "teams-label editable" : undefined}
+                        onClick={() =>
+                          editableTeams && setEditingTeams(row.pool_match_id)
+                        }
+                        title={editableTeams ? "Editar equipos" : undefined}
+                      >
+                        {row.home_team} <em>vs</em> {row.away_team}
+                      </span>
+                    )}
+                  </td>
+                );
+              })()}
               {(() => {
                 const editableOff = !!adminToken && row.match_id != null;
                 const isEditingOff = editingOff === row.pool_match_id;
