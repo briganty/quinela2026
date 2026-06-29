@@ -122,7 +122,7 @@ function poolRows(poolId) {
   const pms = db
     .prepare(
       `SELECT pm.id, pm.position, pm.home_team, pm.away_team, pm.reversed,
-              m.id AS match_id, m.kickoff, m.status,
+              m.id AS match_id, m.kickoff, m.status, m.phase,
               m.official_home, m.official_away, m.live_home, m.live_away
        FROM pool_matches pm
        LEFT JOIN matches m ON m.id = pm.match_id
@@ -263,6 +263,7 @@ export function grid(poolId) {
       pool_match_id: pm.id,
       match_id: pm.match_id,
       reversed: !!pm.reversed,
+      phase: pm.phase,
       position: pm.position,
       kickoff: pm.kickoff,
       status: pm.status || "SCHEDULED",

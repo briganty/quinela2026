@@ -1,6 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { getGrid, savePrediction, setMatchResult } from "../api.js";
 
+const PHASE_LABEL = {
+  R32: "16vos",
+  R16: "8vos",
+  QF: "4tos",
+  SF: "Semis",
+  "3RD": "3er puesto",
+  FINAL: "Final",
+};
+
 const ptsClass = (p, live) => {
   const base =
     p === 3 ? "cell exact" : p === 1 ? "cell outcome" : p === 0 ? "cell miss" : "cell";
@@ -168,6 +177,9 @@ export default function PredictionGrid({ poolId, adminToken }) {
           {rows.map((row) => (
             <tr key={row.pool_match_id}>
               <td className="sticky-col match">
+                {row.phase && row.phase !== "GROUP" && (
+                  <span className="phase-tag">{PHASE_LABEL[row.phase] || row.phase}</span>
+                )}
                 <span>
                   {row.home_team} <em>vs</em> {row.away_team}
                 </span>

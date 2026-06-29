@@ -300,6 +300,19 @@ body {
 .grid thead .sticky-col { z-index: 2; }
 .grid .match span { font-size: 0.86rem; }
 .grid .match em { color: var(--muted); font-style: normal; padding: 0 3px; }
+.grid .match .phase-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent-2);
+  background: rgba(31, 59, 138, 0.08);
+  vertical-align: middle;
+}
 .grid .official { font-weight: 700; color: var(--brand-navy); }
 .grid .cell { position: relative; }
 .grid .pred { font-variant-numeric: tabular-nums; }

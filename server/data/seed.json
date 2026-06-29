@@ -2633,6 +2633,774 @@
       "away_team": "Argentina",
       "match_no": 72,
       "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 73,
+      "home_team": "2° A",
+      "away_team": "2° B",
+      "match_no": 73,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 74,
+      "home_team": "1° E",
+      "away_team": "Mejor 3°",
+      "match_no": 74,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 75,
+      "home_team": "1° F",
+      "away_team": "2° C",
+      "match_no": 75,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 76,
+      "home_team": "1° C",
+      "away_team": "2° F",
+      "match_no": 76,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 77,
+      "home_team": "1° I",
+      "away_team": "Mejor 3°",
+      "match_no": 77,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 78,
+      "home_team": "2° E",
+      "away_team": "2° I",
+      "match_no": 78,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 79,
+      "home_team": "1° A",
+      "away_team": "Mejor 3°",
+      "match_no": 79,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 80,
+      "home_team": "1° L",
+      "away_team": "Mejor 3°",
+      "match_no": 80,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 81,
+      "home_team": "1° D",
+      "away_team": "Mejor 3°",
+      "match_no": 81,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 82,
+      "home_team": "1° G",
+      "away_team": "Mejor 3°",
+      "match_no": 82,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 83,
+      "home_team": "2° K",
+      "away_team": "2° L",
+      "match_no": 83,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 84,
+      "home_team": "1° H",
+      "away_team": "2° J",
+      "match_no": 84,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 85,
+      "home_team": "1° B",
+      "away_team": "Mejor 3°",
+      "match_no": 85,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 86,
+      "home_team": "1° J",
+      "away_team": "2° H",
+      "match_no": 86,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 87,
+      "home_team": "1° K",
+      "away_team": "Mejor 3°",
+      "match_no": 87,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 88,
+      "home_team": "2° D",
+      "away_team": "2° G",
+      "match_no": 88,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 89,
+      "home_team": "Ganador 73",
+      "away_team": "Ganador 74",
+      "match_no": 89,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 90,
+      "home_team": "Ganador 75",
+      "away_team": "Ganador 76",
+      "match_no": 90,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 91,
+      "home_team": "Ganador 77",
+      "away_team": "Ganador 78",
+      "match_no": 91,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 92,
+      "home_team": "Ganador 79",
+      "away_team": "Ganador 80",
+      "match_no": 92,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 93,
+      "home_team": "Ganador 81",
+      "away_team": "Ganador 82",
+      "match_no": 93,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 94,
+      "home_team": "Ganador 83",
+      "away_team": "Ganador 84",
+      "match_no": 94,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 95,
+      "home_team": "Ganador 85",
+      "away_team": "Ganador 86",
+      "match_no": 95,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 96,
+      "home_team": "Ganador 87",
+      "away_team": "Ganador 88",
+      "match_no": 96,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 97,
+      "home_team": "Ganador 89",
+      "away_team": "Ganador 90",
+      "match_no": 97,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 98,
+      "home_team": "Ganador 93",
+      "away_team": "Ganador 94",
+      "match_no": 98,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 99,
+      "home_team": "Ganador 91",
+      "away_team": "Ganador 92",
+      "match_no": 99,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 100,
+      "home_team": "Ganador 95",
+      "away_team": "Ganador 96",
+      "match_no": 100,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 101,
+      "home_team": "Ganador 97",
+      "away_team": "Ganador 98",
+      "match_no": 101,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 102,
+      "home_team": "Ganador 99",
+      "away_team": "Ganador 100",
+      "match_no": 102,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 103,
+      "home_team": "Perdedor 101",
+      "away_team": "Perdedor 102",
+      "match_no": 103,
+      "reversed": 0
+    },
+    {
+      "pool": "CASA",
+      "position": 104,
+      "home_team": "Ganador 101",
+      "away_team": "Ganador 102",
+      "match_no": 104,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 26,
+      "home_team": "2° A",
+      "away_team": "2° B",
+      "match_no": 73,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 27,
+      "home_team": "1° E",
+      "away_team": "Mejor 3°",
+      "match_no": 74,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 28,
+      "home_team": "1° F",
+      "away_team": "2° C",
+      "match_no": 75,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 29,
+      "home_team": "1° C",
+      "away_team": "2° F",
+      "match_no": 76,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 30,
+      "home_team": "1° I",
+      "away_team": "Mejor 3°",
+      "match_no": 77,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 31,
+      "home_team": "2° E",
+      "away_team": "2° I",
+      "match_no": 78,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 32,
+      "home_team": "1° A",
+      "away_team": "Mejor 3°",
+      "match_no": 79,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 33,
+      "home_team": "1° L",
+      "away_team": "Mejor 3°",
+      "match_no": 80,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 34,
+      "home_team": "1° D",
+      "away_team": "Mejor 3°",
+      "match_no": 81,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 35,
+      "home_team": "1° G",
+      "away_team": "Mejor 3°",
+      "match_no": 82,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 36,
+      "home_team": "2° K",
+      "away_team": "2° L",
+      "match_no": 83,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 37,
+      "home_team": "1° H",
+      "away_team": "2° J",
+      "match_no": 84,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 38,
+      "home_team": "1° B",
+      "away_team": "Mejor 3°",
+      "match_no": 85,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 39,
+      "home_team": "1° J",
+      "away_team": "2° H",
+      "match_no": 86,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 40,
+      "home_team": "1° K",
+      "away_team": "Mejor 3°",
+      "match_no": 87,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 41,
+      "home_team": "2° D",
+      "away_team": "2° G",
+      "match_no": 88,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 42,
+      "home_team": "Ganador 73",
+      "away_team": "Ganador 74",
+      "match_no": 89,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 43,
+      "home_team": "Ganador 75",
+      "away_team": "Ganador 76",
+      "match_no": 90,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 44,
+      "home_team": "Ganador 77",
+      "away_team": "Ganador 78",
+      "match_no": 91,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 45,
+      "home_team": "Ganador 79",
+      "away_team": "Ganador 80",
+      "match_no": 92,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 46,
+      "home_team": "Ganador 81",
+      "away_team": "Ganador 82",
+      "match_no": 93,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 47,
+      "home_team": "Ganador 83",
+      "away_team": "Ganador 84",
+      "match_no": 94,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 48,
+      "home_team": "Ganador 85",
+      "away_team": "Ganador 86",
+      "match_no": 95,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 49,
+      "home_team": "Ganador 87",
+      "away_team": "Ganador 88",
+      "match_no": 96,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 50,
+      "home_team": "Ganador 89",
+      "away_team": "Ganador 90",
+      "match_no": 97,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 51,
+      "home_team": "Ganador 93",
+      "away_team": "Ganador 94",
+      "match_no": 98,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 52,
+      "home_team": "Ganador 91",
+      "away_team": "Ganador 92",
+      "match_no": 99,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 53,
+      "home_team": "Ganador 95",
+      "away_team": "Ganador 96",
+      "match_no": 100,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 54,
+      "home_team": "Ganador 97",
+      "away_team": "Ganador 98",
+      "match_no": 101,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 55,
+      "home_team": "Ganador 99",
+      "away_team": "Ganador 100",
+      "match_no": 102,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 56,
+      "home_team": "Perdedor 101",
+      "away_team": "Perdedor 102",
+      "match_no": 103,
+      "reversed": 0
+    },
+    {
+      "pool": "ABU",
+      "position": 57,
+      "home_team": "Ganador 101",
+      "away_team": "Ganador 102",
+      "match_no": 104,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 43,
+      "home_team": "2° A",
+      "away_team": "2° B",
+      "match_no": 73,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 44,
+      "home_team": "1° E",
+      "away_team": "Mejor 3°",
+      "match_no": 74,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 45,
+      "home_team": "1° F",
+      "away_team": "2° C",
+      "match_no": 75,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 46,
+      "home_team": "1° C",
+      "away_team": "2° F",
+      "match_no": 76,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 47,
+      "home_team": "1° I",
+      "away_team": "Mejor 3°",
+      "match_no": 77,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 48,
+      "home_team": "2° E",
+      "away_team": "2° I",
+      "match_no": 78,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 49,
+      "home_team": "1° A",
+      "away_team": "Mejor 3°",
+      "match_no": 79,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 50,
+      "home_team": "1° L",
+      "away_team": "Mejor 3°",
+      "match_no": 80,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 51,
+      "home_team": "1° D",
+      "away_team": "Mejor 3°",
+      "match_no": 81,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 52,
+      "home_team": "1° G",
+      "away_team": "Mejor 3°",
+      "match_no": 82,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 53,
+      "home_team": "2° K",
+      "away_team": "2° L",
+      "match_no": 83,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 54,
+      "home_team": "1° H",
+      "away_team": "2° J",
+      "match_no": 84,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 55,
+      "home_team": "1° B",
+      "away_team": "Mejor 3°",
+      "match_no": 85,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 56,
+      "home_team": "1° J",
+      "away_team": "2° H",
+      "match_no": 86,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 57,
+      "home_team": "1° K",
+      "away_team": "Mejor 3°",
+      "match_no": 87,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 58,
+      "home_team": "2° D",
+      "away_team": "2° G",
+      "match_no": 88,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 59,
+      "home_team": "Ganador 73",
+      "away_team": "Ganador 74",
+      "match_no": 89,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 60,
+      "home_team": "Ganador 75",
+      "away_team": "Ganador 76",
+      "match_no": 90,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 61,
+      "home_team": "Ganador 77",
+      "away_team": "Ganador 78",
+      "match_no": 91,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 62,
+      "home_team": "Ganador 79",
+      "away_team": "Ganador 80",
+      "match_no": 92,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 63,
+      "home_team": "Ganador 81",
+      "away_team": "Ganador 82",
+      "match_no": 93,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 64,
+      "home_team": "Ganador 83",
+      "away_team": "Ganador 84",
+      "match_no": 94,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 65,
+      "home_team": "Ganador 85",
+      "away_team": "Ganador 86",
+      "match_no": 95,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 66,
+      "home_team": "Ganador 87",
+      "away_team": "Ganador 88",
+      "match_no": 96,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 67,
+      "home_team": "Ganador 89",
+      "away_team": "Ganador 90",
+      "match_no": 97,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 68,
+      "home_team": "Ganador 93",
+      "away_team": "Ganador 94",
+      "match_no": 98,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 69,
+      "home_team": "Ganador 91",
+      "away_team": "Ganador 92",
+      "match_no": 99,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 70,
+      "home_team": "Ganador 95",
+      "away_team": "Ganador 96",
+      "match_no": 100,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 71,
+      "home_team": "Ganador 97",
+      "away_team": "Ganador 98",
+      "match_no": 101,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 72,
+      "home_team": "Ganador 99",
+      "away_team": "Ganador 100",
+      "match_no": 102,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 73,
+      "home_team": "Perdedor 101",
+      "away_team": "Perdedor 102",
+      "match_no": 103,
+      "reversed": 0
+    },
+    {
+      "pool": "Brilum",
+      "position": 74,
+      "home_team": "Ganador 101",
+      "away_team": "Ganador 102",
+      "match_no": 104,
+      "reversed": 0
     }
   ],
   "predictions": [
