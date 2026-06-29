@@ -10,7 +10,7 @@ export function listMatches() {
     .prepare(
       `SELECT id, match_no, kickoff, stadium, group_code, phase,
               home_team, away_team, official_home, official_away, status, updated_at
-       FROM matches ORDER BY match_no`
+       FROM matches ORDER BY kickoff, match_no`
     )
     .all();
 }
@@ -128,7 +128,7 @@ function poolRows(poolId) {
        FROM pool_matches pm
        LEFT JOIN matches m ON m.id = pm.match_id
        WHERE pm.pool_id = ?
-       ORDER BY pm.position`
+       ORDER BY m.kickoff, pm.position`
     )
     .all(poolId);
   const preds = db
