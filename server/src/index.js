@@ -3,7 +3,7 @@ import cron from "node-cron";
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadSeedIfEmpty, syncNewPools } from "./db.js";
+import { loadSeedIfEmpty, syncNewPools, syncNewPoolMatches } from "./db.js";
 import poolsRouter from "./routes/pools.js";
 import matchesRouter from "./routes/matches.js";
 import groupsRouter from "./routes/groups.js";
@@ -21,6 +21,10 @@ console.log(seeded ? "Database seeded from seed.json" : "Database already initia
 // Add any new quiniela (pool) introduced in seed.json to an already-seeded DB.
 const addedPools = syncNewPools();
 if (addedPools.length) console.log("New pools added:", addedPools.join(", "));
+
+// Backfill matches added to existing pools after seeding (e.g. knockout rounds).
+const addedPM = syncNewPoolMatches();
+if (addedPM) console.log(`Backfilled ${addedPM} pool match(es) into existing pools`);
 
 const app = express();
 app.use(express.json());

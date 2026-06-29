@@ -224,3 +224,57 @@ export function syncNewPools() {
   db.transaction(() => insertPools(seed, toAdd))();
   return toAdd;
 }
+
+// Backfill pool_matches that exist in seed.json but not yet in an already-seeded
+// pool (e.g. knockout rounds added after the group stage). Keyed by (pool,
+// match_no) so re-runs are no-ops; appends after each pool's current max
+// position. Returns the number of pool_matches inserted.
+export function syncNewPoolMatches() {
+  migrate();
+  if (isEmpty() || !existsSync(SEED_PATH)) return 0;
+  const seed = readSeed();
+
+  const poolIdByName = new Map(
+    db.prepare("SELECT id, name FROM pools").all().map((r) => [r.name, r.id])
+  );
+  const matchIdByNo = new Map(
+    db.prepare("SELECT id, match_no FROM matches").all().map((r) => [r.match_no, r.id])
+  );
+  // Which (pool_id, match_no) pairs already exist in the DB.
+  const present = new Set(
+    db
+      .prepare(
+        `SELECT pm.pool_id AS pid, m.match_no AS no
+         FROM pool_matches pm JOIN matches m ON m.id = pm.match_id`
+      )
+      .all()
+      .map((r) => `${r.pid}#${r.no}`)
+  );
+  const maxPos = db.prepare(
+    "SELECT COALESCE(MAX(position),0) AS p FROM pool_matches WHERE pool_id=?"
+  );
+  const ins = db.prepare(
+    `INSERT INTO pool_matches (pool_id, position, home_team, away_team, match_id, reversed)
+     VALUES (?, ?, ?, ?, ?, ?)`
+  );
+
+  const posByPool = new Map();
+  let added = 0;
+  const tx = db.transaction(() => {
+    for (const pm of seed.pool_matches) {
+      const pid = poolIdByName.get(pm.pool);
+      const mid = pm.match_no != null ? matchIdByNo.get(pm.match_no) : null;
+      if (!pid || !mid) continue; // unknown pool/match, or new pool (handled elsewhere)
+      const key = `${pid}#${pm.match_no}`;
+      if (present.has(key)) continue;
+      present.add(key); // guard against seed listing the same pair twice
+      if (!posByPool.has(pid)) posByPool.set(pid, maxPos.get(pid).p);
+      const pos = posByPool.get(pid) + 1;
+      posByPool.set(pid, pos);
+      ins.run(pid, pos, pm.home_team, pm.away_team, mid, pm.reversed ? 1 : 0);
+      added++;
+    }
+  });
+  tx();
+  return added;
+}
