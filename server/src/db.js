@@ -225,6 +225,39 @@ export function syncNewPools() {
   return toAdd;
 }
 
+// Reconcile schedule metadata (kickoff + stadium) of existing matches with
+// seed.json. The DB is only seeded when empty, so schedule corrections made in
+// seed.json after the first deploy (e.g. real kickoff times in Costa Rica local
+// time, fixed knockout venues) never reach a live DB otherwise. Team names and
+// scores are left to the data provider / admin. Returns the number of rows
+// changed.
+export function syncScheduleFromSeed() {
+  migrate();
+  if (isEmpty() || !existsSync(SEED_PATH)) return 0;
+  const seed = readSeed();
+  const cur = new Map(
+    db
+      .prepare("SELECT match_no, kickoff, stadium FROM matches")
+      .all()
+      .map((r) => [r.match_no, r])
+  );
+  const upd = db.prepare(
+    "UPDATE matches SET kickoff=?, stadium=?, updated_at=? WHERE match_no=?"
+  );
+  let changed = 0;
+  const tx = db.transaction(() => {
+    for (const m of seed.matches) {
+      const row = cur.get(m.match_no);
+      if (!row) continue;
+      if (row.kickoff === m.kickoff && row.stadium === m.stadium) continue;
+      upd.run(m.kickoff, m.stadium, new Date().toISOString(), m.match_no);
+      changed++;
+    }
+  });
+  tx();
+  return changed;
+}
+
 // Backfill pool_matches that exist in seed.json but not yet in an already-seeded
 // pool (e.g. knockout rounds added after the group stage). Keyed by (pool,
 // match_no) so re-runs are no-ops; appends after each pool's current max

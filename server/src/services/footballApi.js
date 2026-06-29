@@ -1,5 +1,15 @@
 import { db, getSetting } from "../db.js";
 
+// Providers give kickoff times in UTC; we store them in Costa Rica local time
+// (UTC-6, no DST) to match the seed convention. Returns a naive ISO string.
+const CR_OFFSET_MIN = Number(process.env.TZ_OFFSET_MINUTES ?? -360);
+function toCrKickoff(utc) {
+  if (!utc) return null;
+  const d = new Date(utc);
+  if (Number.isNaN(d.getTime())) return null;
+  return new Date(d.getTime() + CR_OFFSET_MIN * 60000).toISOString().slice(0, 19);
+}
+
 // Map our Spanish team names to normalized aliases used by football data
 // providers (football-data.org / API-Football use English names).
 const EN = {
@@ -274,7 +284,7 @@ function applyKnockouts(fixtures, espnMinute = () => null) {
         const namesChanged = home !== o.home_team || away !== o.away_team;
         const status = mapStatus(f.rawStatus);
         const now = new Date().toISOString();
-        const kickoff = f.utcDate ? f.utcDate.replace(/Z$/, "") : null;
+        const kickoff = toCrKickoff(f.utcDate);
         if (status === "FINISHED" && f.homeScore != null && f.awayScore != null) {
           updateFinal.run(
             home, away, f.homeScore, f.awayScore, status,
