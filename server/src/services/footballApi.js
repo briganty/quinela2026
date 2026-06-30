@@ -88,6 +88,29 @@ function resolveTeam(providerName) {
   return null;
 }
 
+// football-data's `fullTime` INCLUDES the penalty-shootout goals: a tie won on
+// penalties is reported as e.g. fullTime 5-4 with duration PENALTY_SHOOTOUT
+// (regularTime 1-1 + penalties 4-3). The quiniela result is the score after
+// extra time — penalties only break the tie, they aren't part of the marcador —
+// so we strip the shootout and return regular time + extra time.
+function fdResult(score) {
+  if (!score) return { home: null, away: null };
+  if (score.duration === "PENALTY_SHOOTOUT") {
+    const rt = score.regularTime;
+    const et = score.extraTime || {};
+    if (rt && rt.home != null && rt.away != null) {
+      return { home: rt.home + (et.home ?? 0), away: rt.away + (et.away ?? 0) };
+    }
+    // Fallback if the breakdown is missing: subtract penalties from fullTime.
+    const ft = score.fullTime || {};
+    const pk = score.penalties || {};
+    if (ft.home != null && ft.away != null) {
+      return { home: ft.home - (pk.home ?? 0), away: ft.away - (pk.away ?? 0) };
+    }
+  }
+  return { home: score.fullTime?.home ?? null, away: score.fullTime?.away ?? null };
+}
+
 // --- provider: football-data.org ----------------------------------------
 async function fetchFootballDataOrg(apiKey) {
   const comp = process.env.FOOTBALL_COMPETITION || "WC";
@@ -95,16 +118,19 @@ async function fetchFootballDataOrg(apiKey) {
   const res = await fetch(url, { headers: { "X-Auth-Token": apiKey } });
   if (!res.ok) throw new Error(`football-data.org ${res.status}`);
   const data = await res.json();
-  return (data.matches || []).map((m) => ({
+  return (data.matches || []).map((m) => {
+    const r = fdResult(m.score);
+    return {
     id: String(m.id),
     home: m.homeTeam?.name || m.homeTeam?.shortName || null,
     away: m.awayTeam?.name || m.awayTeam?.shortName || null,
-    homeScore: m.score?.fullTime?.home ?? null,
-    awayScore: m.score?.fullTime?.away ?? null,
+    homeScore: r.home,
+    awayScore: r.away,
     rawStatus: m.status, // SCHEDULED, TIMED, IN_PLAY, PAUSED, FINISHED, ...
     rawStage: m.stage,   // GROUP_STAGE, LAST_32, LAST_16, QUARTER_FINALS, ...
     utcDate: m.utcDate,
-  }));
+    };
+  });
 }
 
 // --- provider: API-Sports (api-football.com) ----------------------------
